@@ -1,6 +1,9 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import SearchIcon from '@mui/icons-material/Search';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const RemoteHub = () => {
     return (
@@ -35,7 +38,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <SearchIcon/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     All Types of Jobs
                                 </Typography>
@@ -44,7 +47,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <LocationOnIcon/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     All Locations
                                 </Typography>
@@ -53,7 +56,9 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <Typography>
+                                    <ThumbUpIcon sx={{ color: 'blue' }}></ThumbUpIcon>
+                                </Typography>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Smart Matching
                                 </Typography>
