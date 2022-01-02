@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../../components/Shared/Navbar';
-import Profail from '../Profail/Profail';
 import Banner from './Banner/Banner';
 import CurrentJob from './CurrentJob/CurrentJob';
 import Instructions from './Instructions/Instructions';
@@ -11,7 +10,6 @@ const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Profail></Profail>
             <Banner></Banner>
             <Instructions></Instructions>
             <JobSeeker></JobSeeker>
