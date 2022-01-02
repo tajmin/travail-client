@@ -1,0 +1,10 @@
+.jobsContainer{
+    display: flex;
+    background-color: #FAF9F8;
+}
+.jobs-container-left{
+    flex:1
+}
+.jobs-container-right{
+    flex:1;
+}
