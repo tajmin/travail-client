@@ -12,7 +12,7 @@ const verticalCenter={
 
 const Banner = () => {
     return (
-        <Container sx={{ flexGrow: 1 }}>
+        <Container sx={{ flexGrow: 1, my: 5}}>
             <Grid container spacing={2}>
                 <Grid item style={{...verticalCenter, textAlign: "left"}} xs={12} md={6}>
                     <Box>

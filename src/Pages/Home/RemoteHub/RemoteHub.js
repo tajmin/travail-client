@@ -4,10 +4,16 @@ import React from 'react';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import SearchIcon from '@mui/icons-material/Search';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import GroupIcon from '@mui/icons-material/Group';
+import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
+import MarkEmailReadIcon from '@mui/icons-material/MarkEmailRead';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import PaidIcon from '@mui/icons-material/Paid';
+
 
 const RemoteHub = () => {
     return (
-        <Container>
+        <Container style={{marginTop: "40px"}}>
             <Grid container spacing={2}>
                 <Grid item xs={12} style={{textAlign: "center"}}>
                     <Grid>
@@ -20,7 +26,7 @@ const RemoteHub = () => {
                     <Box sx={{ width: '100%', my: 5 }}>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} style={{textAlign: "left"}}>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <KeyboardCommandKeyIcon sx={{ color: '#8E2CF7', fontSize: 50}}/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Free Job Posting
                                 </Typography>
@@ -29,7 +35,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <MarkEmailReadIcon sx={{ color: '#0B7806', fontSize: 50 }}/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Talent Marketplace
                                 </Typography>
@@ -38,7 +44,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <SearchIcon/>
+                                <SearchIcon sx={{ color: 'blue', fontSize: 50 }}/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     All Types of Jobs
                                 </Typography>
@@ -47,7 +53,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <LocationOnIcon/>
+                                <LocationOnIcon sx={{ color: '#0B7806', fontSize: 50 }}/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     All Locations
                                 </Typography>
@@ -57,7 +63,7 @@ const RemoteHub = () => {
                             </Grid>
                             <Grid item xs={12} md={3}>
                                 <Typography>
-                                    <ThumbUpIcon sx={{ color: 'blue' }}></ThumbUpIcon>
+                                    <ThumbUpIcon sx={{ color: '#A5DA58', fontSize: 50 }}></ThumbUpIcon>
                                 </Typography>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Smart Matching
@@ -67,7 +73,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <GroupIcon sx={{ color: '#49D10E ', fontSize: 50 }}/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Power of Networking
                                 </Typography>
@@ -76,7 +82,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <EmojiObjectsIcon sx={{ color: '#F6640B', fontSize: 50 }}/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Creativity Showcase
                                 </Typography>
@@ -85,7 +91,7 @@ const RemoteHub = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg" alt="" />
+                                <PaidIcon sx={{ color: '#49D10E', fontSize: 50 }}/>
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Integrated Payments
                                 </Typography>
