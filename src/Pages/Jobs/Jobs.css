@@ -1,10 +1,16 @@
 .jobsContainer{
     display: flex;
     background-color: #FAF9F8;
+    padding: 50px;
+    justify-content: space-between;
+    text-align: left;
 }
 .jobs-container-left{
-    flex:1
+    flex:1;
+    margin: 10px;
 }
 .jobs-container-right{
     flex:1;
+    margin: 10px;
+
 }
