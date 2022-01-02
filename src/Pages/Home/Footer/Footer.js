@@ -10,21 +10,21 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 
 const Footer = () => {
     return (
-        <Grid sx={{background: '#eeeeee', pt:2, pb:2}} style={{textAlign: "left"}}>
+        <Grid sx={{background: '#eeeeee', pl:2, pt:2, pb:2}} style={{textAlign: "left"}}>
             <Grid container spacing={2}>
                     <Grid item xs={6} md={4} lg={3}>
-                        <Typography sx={{mb:2, ml:2, mt:2}} variant='h4' style={{ fontWeight: 600 }}>Site Name & Logo </Typography>
-                        <Button><MailIcon sx={{ color: '#2196f3;', ml:1, mr:1, mt:.5, fontSize: 20}}></MailIcon>jobshub@gmail.com</Button><br />
+                        <Typography sx={{mb:2, mt:2}} variant='h4' style={{ fontWeight: 600 }}>Site Name & Logo </Typography>
+                        <Button><MailIcon sx={{ color: '#2196f3;', ml:-1, mr:1, mt:.5, fontSize: 20}}></MailIcon>jobshub@gmail.com</Button><br />
                         <Link style={{textDecoration:'none'}} sx={{mt:.5}}>
-                            <MailIcon sx={{ color: '#2196f3;', ml:2, mt:1, mr:1, fontSize: 20}}></MailIcon>jobshub@gmail.com</Link><br />
-                        <Grid sx={{pt:1,mt:.5, ml:2}}>
+                            <MailIcon sx={{ color: '#2196f3;', mt:1, mr:1, fontSize: 20}}></MailIcon>jobshub@gmail.com</Link><br />
+                        <Grid sx={{pt:1,mt:.5, }}>
                             <FacebookIcon sx={{color:'#2979ff'}}></FacebookIcon>
                             <LinkedInIcon sx={{color:'rgb(0, 119, 181)', mx:1}}></LinkedInIcon>
                             <TwitterIcon sx={{color:'rgb(56, 161, 243)'}}></TwitterIcon>
                             <InstagramIcon sx={{color:'rgb(215, 32, 90)', mx:1}}></InstagramIcon>
                             <PinterestIcon sx={{color:'rgb(205, 33, 41)'}}></PinterestIcon>
                         </Grid>
-                        <Typography sx={{fontSize:14, color:'#9e9e9e',mt:2, ml:2}}>© 2022 JobsHub.com</Typography>
+                        <Typography sx={{fontSize:14, color:'#9e9e9e',mt:2}}>© 2022 JobsHub.com</Typography>
                     </Grid>
                     <Grid item xs={6} md={4} lg={3} style={{paddingLeft:'3%'}}>
                         <Typography sx={{color:'#757575', my:2, fontSize:20}}>General</Typography>
