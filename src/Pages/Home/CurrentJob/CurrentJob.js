@@ -5,7 +5,7 @@ import jobs from "../../../fakeData"
 
 const CurrentJob = () => {
     return (
-        <Container>
+        <Container style={{marginTop: "40px"}}>
             <Box style={{marginBottom: "50px"}}>
             <Typography variant='h4' style={{ fontWeight: 600, marginTop: "15px"}}>
                 Current Job
@@ -13,7 +13,7 @@ const CurrentJob = () => {
             </Box>
             <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                {jobs.map((job, id) => (
+                {jobs.slice(0, 6).map((job, id) => (
                 <Grid item xs={2} sm={4} md={6} key={id} style={{borderRadius: "10px", gridGap: "5px"}}>
                     <Typography variant='h5' style={{fontWeight: 600, marginTop: "15px"}}>
                         {job.title}

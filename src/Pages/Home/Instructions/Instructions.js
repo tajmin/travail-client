@@ -4,7 +4,7 @@ import React from 'react';
 
 const Instructions = () => {
     return (
-        <Container>
+        <Container style={{marginTop: "40px"}}>
             <Grid container spacing={2}>
                 <Grid item xs={12} style={{textAlign: "center"}}>
                     <Grid>
@@ -20,7 +20,7 @@ const Instructions = () => {
                     <Box sx={{ width: '100%', my: 5 }}>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} style={{textAlign: "left"}}>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://image.shutterstock.com/image-photo/stock-vector-business-people-holding-megaphone-and-shouting-through-it-announcement-of-good-news-attention-450w-2053129028.jpg" alt="" />
+                                <img style={{width: "250px", height: "200px"}} src="https://image.shutterstock.com/image-photo/stock-vector-business-people-holding-megaphone-and-shouting-through-it-announcement-of-good-news-attention-450w-2053129028.jpg" alt="" />
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Post Jobs <br/> For Free
                                 </Typography>
@@ -29,7 +29,7 @@ const Instructions = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://image.shutterstock.com/image-photo/stock-vector-business-people-holding-megaphone-and-shouting-through-it-announcement-of-good-news-attention-450w-2053129028.jpg" alt="" />
+                                <img style={{width: "250px", height: "200px"}} src="https://image.freepik.com/free-vector/flat-customer-support-illustration_23-2148897470.jpg" alt="" />
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Browse Services and <br/> Portfolios
                                 </Typography>
@@ -38,7 +38,7 @@ const Instructions = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://image.shutterstock.com/image-photo/stock-vector-business-people-holding-megaphone-and-shouting-through-it-announcement-of-good-news-attention-450w-2053129028.jpg" alt="" />
+                                <img style={{width: "250px", height: "200px"}} src="https://image.freepik.com/free-vector/organic-flat-customer-support-illustration_23-2148899207.jpg" alt="" />
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Get Best Matches for <br/> Your Jobs
                                 </Typography>
@@ -47,7 +47,7 @@ const Instructions = () => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} md={3}>
-                                <img style={{width: "250px"}} src="https://image.shutterstock.com/image-photo/stock-vector-business-people-holding-megaphone-and-shouting-through-it-announcement-of-good-news-attention-450w-2053129028.jpg" alt="" />
+                                <img style={{width: "250px", height: "200px"}} src="https://image.freepik.com/free-vector/organic-flat-customer-support-illustration_23-2148899174.jpg" alt="" />
                                 <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
                                     Use the Power of <br/> Community
                                 </Typography>
