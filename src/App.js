@@ -1,10 +1,16 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+
+import JobFullDetails from './components/Job/JobFullDetails';
 import AuthProvider from './context/AuthProvider';
+
 import Home from './Pages/Home/Home';
 import Jobs from './Pages/Jobs/Jobs';
 import Login from './Pages/Login/Login';
+import PostAJob from './Pages/PostAJob/PostAJob';
+import SignUp from './Pages/SignUp/SignUp';
+import ProfailDrawer from './Pages/Profail/ProfailDrawer/ProfailDrawer'
 
 function App() {
   return (
@@ -14,7 +20,10 @@ function App() {
           <Routes>
             <Route path='/login' element={<Login></Login>} />
             <Route path='/' element={<Home></Home>} />
-            <Route path='/jobs' lement={<Jobs></Jobs>} />
+            <Route path='/jobs' element={<Jobs></Jobs>} />
+            <Route path='/postjob' element={<PostAJob></PostAJob>} />
+            <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
+            <Route path='/sign-up' element={<SignUp></SignUp>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

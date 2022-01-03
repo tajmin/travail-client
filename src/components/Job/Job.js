@@ -2,7 +2,6 @@ import './Job.css';
 import { useState } from 'react'
 
 const Job = (props) => {
-    // const [jobId, setJobId] = useState(1);
     const { id, title, country, company, type, jobDesc, salary, skills} = props.job;
     const handleSetJob = props.handleSetJob;
 
@@ -11,8 +10,9 @@ const Job = (props) => {
             <div className="job-card">
                 <div className="card-top">
                     <h3>{title}</h3>
-                    <span>{company}</span>
+                    <span>{company}</span> 
                     <span>{country}</span>
+                    <p>{salary}</p>
                 </div>
                 <div className="card-bottom">
                     <p>{jobDesc.slice(0, 200)}</p>

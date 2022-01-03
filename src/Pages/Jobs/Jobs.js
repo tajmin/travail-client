@@ -22,7 +22,6 @@ const Jobs = () => {
                 <div className="jobs-container-left">
                     {
                         jobs.map(job => <Job key={job.id}
-                            // setJobId={setJobId}
                             handleSetJob={handleSetJob}
                             job={job}>
                         </Job>)
