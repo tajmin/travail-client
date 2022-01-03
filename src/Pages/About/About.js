@@ -1,11 +1,14 @@
 import { Button, Grid, Link, Typography } from '@mui/material';
 import React from 'react';
 import ArrowRightAltSharpIcon from '@mui/icons-material/ArrowRightAltSharp';
+import Navbar from '../../components/Shared/Navbar';
+import Footer from '../Home/Footer/Footer';
 
 
 const About = () => {
     return (
         <Grid sx={{ml:3, my:2}}>
+            <Navbar></Navbar>
             <h1>About <span style={{color:'#FF7F50'}}>WebSIteName</span> </h1>
             <Grid container spacing={1}  style={{textAlign: "left"}}>
                 <Grid item md={12} lg={6} style={{borderRight:'2px solid black'}}>
@@ -45,6 +48,7 @@ const About = () => {
                     </Grid>
                 </Grid>
             </Grid>
+            <Footer></Footer>
         </Grid>
     );
 };

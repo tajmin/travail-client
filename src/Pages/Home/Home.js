@@ -17,7 +17,6 @@ const Home = () => {
             <JobSeeker></JobSeeker>
             <RemoteHub></RemoteHub>
             <CurrentJob></CurrentJob>
-            <About></About>
             <Footer></Footer>
         </div>
     );
