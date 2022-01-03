@@ -11,6 +11,7 @@ import Login from './Pages/Login/Login';
 import PostAJob from './Pages/PostAJob/PostAJob';
 import SignUp from './Pages/SignUp/SignUp';
 import ProfailDrawer from './Pages/Profail/ProfailDrawer/ProfailDrawer'
+import MyApplication from './Pages/Profail/MyApplicationf/MyApplication';
 
 function App() {
   return (
