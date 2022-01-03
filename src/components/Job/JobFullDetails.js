@@ -1,10 +1,28 @@
-import { FavoriteBorder, LocationOn } from '@mui/icons-material';
-import { Button, Card, Container, CssBaseline, Typography } from '@mui/material';
+import { LocationOn } from '@mui/icons-material';
+import { Button, Card, Container, CssBaseline, TextField, Typography } from '@mui/material';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import { useParams } from 'react-router-dom';
+import Modal from '@mui/material/Modal';
+import { useForm } from "react-hook-form";
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 600,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
+
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -16,14 +34,51 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const JobFullDetails = () => {
 
+    const { id } = useParams();
+    const [job, setJob] = React.useState([]);
+
+    const { companyName, description, jobTitle, location,  salary, workingHour,} = job;
+
+    React.useEffect(() => {
+        fetch(`http://localhost:2222/availableJobs/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setJob(data);
+            })
+    }, [id]);
 
 
+    //modal 
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    //react hook form
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+       fetch('http://localhost:2222/insertApplication',{
+           method : "POST",
+           headers:{
+               "content-type": "application/json"
+           },
+           body: JSON.stringify(data)   
+       })
+       .then(res=> res.json())
+       .then(data=>{
+           if(data.acknowledged){
+               alert("Application submitted successfully. We will notify you soon.Till then take care bye bye.")
+               reset()
+           }
+       })
+    };
+
+    
 
 
 
     return (
         <>
-            <Typography variant="h2">
+            <Typography variant="h3" sx={{ margin: "40px 0px", borderBottom: "1px solid gray" }}>
                 Full Details
             </Typography>
 
@@ -33,72 +88,84 @@ const JobFullDetails = () => {
                 <Grid container spacing={2} >
                     <Grid item xs={12} md={2}>
                     </Grid>
-                    <Grid item xs={12} md={7} >
-                        <Item border={1}>
+                    <Grid item xs={12} md={7}  >
+                        <Item border={2}>
                             <Container align="left" sx={{ padding: "10px 50px" }}>
                                 <Typography variant="h5">
-                                    Front end Developer
+                                    {jobTitle}
                                 </Typography>
                                 <Typography variant="h6">
-                                    National Processing
+                                    {companyName}
                                 </Typography>
                                 <Typography>
-                                    <LocationOn /> 472 W 800 N, Orem, UT 84057
+                                    <LocationOn sx={{ fontSize: "16px"}} /> {location}
                                 </Typography>
                                 <Typography variant="body2">
-                                    Hybrid remote
+                                    {workingHour}
                                 </Typography>
                                 <Typography variant="body2">
-                                    $95,000 - $106,000 a year - Full-time
+                                    $ {salary} a year - Full-time
                                 </Typography>
-                                <Typography>
-                                    National Processing
-                                </Typography>
+
+
+                                {/*----------------------- apply job modal added--------------------- */}
+
                                 <>
-                                    <Button variant="contained" sx={{ minWidth: 200, marginRight: "10px" }}>
-                                        Apply Now
-                                    </Button>
-                                    <FavoriteBorder sx={{ fontSize: "40px" }} />
+                                    <div>
+                                        <Button variant="contained" sx={{ margin: "20px 0px" }} onClick={handleOpen}>Apply Now</Button>
+                                        <Modal
+                                            open={open}
+                                            onClose={handleClose}
+                                            aria-labelledby="modal-modal-title"
+                                            aria-describedby="modal-modal-description"
+                                        >
+                                            <Box sx={style}>
+                                                <Typography sx={{ margin: "20px 0px" }} color="success" id="modal-modal-title" variant="h5" component="h2">
+                                                    Fill the form with correct information.
+                                                </Typography>
+
+
+                                                {/* ---------------react hook form ------------------ */}
+
+
+                                                <form onSubmit={handleSubmit(onSubmit)}>
+
+
+                                                    <TextField sx={{ marginBottom: "20px" }} {...register("fullName")} fullWidth label="Full Name" id="fullWidth" />
+
+                                                    <TextField sx={{ marginBottom: "20px" }} {...register("email")} fullWidth label="Email" id="fullWidth" />
+
+                                                    <TextField sx={{ marginBottom: "20px" }} {...register("phone")} fullWidth label="Phone Number" id="fullWidth" />
+
+                                                    <TextField sx={{ marginBottom: "20px" }} {...register("resume")} fullWidth label="CV or Resume Link" id="fullWidth" />
+
+                                                    <TextField sx={{ marginBottom: "20px" }} {...register("gender")} fullWidth label="Gender" id="fullWidth" />
+
+                                                    <TextField sx={{ marginBottom: "20px" }} {...register("expectedSalary")} fullWidth label="Expected Salary" id="fullWidth" />
+
+
+
+
+                                                    <Button variant="contained" color="success" type="submit">Submit</Button>
+                                                </form>
+
+
+
+                                            </Box>
+                                        </Modal>
+                                    </div>
+
                                 </>
+                                {/*---------------------- apply job modal ended ----------------------- */}
+
                             </Container>
                             <CssBaseline />
 
                             <Container sx={{ borderTop: "1px solid gray" }}>
-                                <Typography variant="h4" sx={{ margin: "20px 0px" }}>Full Job Description</Typography>
+                                <Typography variant="h4" sx={{ margin: "20px 0px" }}>Job Description</Typography>
                                 <Typography align="left" variant="subtitle1">Will Consider US Based Remote Candidates.
 
-                                    National Processing is a well-established, award-winning merchant services provider based in Orem, Utah. We provide payment processing solutions for businesses of all sizes across the country. We’re growing rapidly and are expanding our technology offerings. Come to join a fun, hard-working team and wake up every morning wanting to go to work!
-
-                                    We own and maintain several websites, gateways, and other payment transaction software. We have several new exciting projects in the works and need a talented front end developer to join our growing team.
-
-                                    Education/Experience/Skills:
-
-                                    Must have an excellent sense of design
-                                    Experience conceptualizing and developing user interfaces
-                                    Strong CSS3, HTML5, Javascript ES6 experience and skills
-                                    Ability to translate static designs into interactive and fully functional web interfaces using the latest technologies and best practices
-                                    Ability to design static mockups a bonus
-                                    Photoshop, Illustrator, etc. experience
-                                    Well-versed in one or all of the following frameworks: Angular, Vue, React or similar
-                                    Experience using CSS preprocessors like SCSS/SASS
-                                    Experience with git and Github
-                                    Must understand mobile-first and responsive design/development principles
-                                    Ability to create light weight, efficient, bug free front-end code
-                                    Some server side/back end experience preferred
-                                    Building client side interfaces using Laravel framework a bonus
-                                    We offer a competitive benefits package & great work environment:
-
-                                    Competitive salary
-                                    401k with full match
-                                    Competitive health insurance program
-                                    Paid time off program including paid holidays
-                                    Casual dress code
-                                    Fully stocked break room
-                                    Room for growth
-                                    Fun, collaborative environment
-                                    Remote/Hybrid or in Office
-                                    Brand new Macbook Pro
-                                    $95k-$106k DOE, DOQ. Full time position.
+                                    {description}
 
                                     Job Type: Full-time
 

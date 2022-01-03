@@ -1,16 +1,27 @@
 // import React,{useState} from 'react';
 import './Jobs.css';
 import Job from '../../components/Job/Job';
-import jobs from '../../fakeData'
+// import jobs from '../../fakeData'
 import JobDetails from '../../components/Job/JobDetails';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 
 
 const Jobs = () => {
 
-    const [jobId, setJobId] = useState(1);
+    const [jobs, setJobs] = useState([]);
+    const [jobId, setJobId] = useState('');
+    console.log(jobs);
+
+    useEffect(() => {
+        fetch('http://localhost:2222/availableJobs')
+        .then(res=> res.json())
+        .then(data=> {
+            setJobs(data);
+        })
+    },[jobId])
+
     const handleSetJob = (id) => {
         setJobId(id)
     }
@@ -21,7 +32,7 @@ const Jobs = () => {
             <div className="jobsContainer">
                 <div className="jobs-container-left">
                     {
-                        jobs.map(job => <Job key={job.id}
+                        jobs.map(job => <Job key={job._id}
                             handleSetJob={handleSetJob}
                             job={job}>
                         </Job>)

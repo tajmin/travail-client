@@ -24,6 +24,7 @@ function App() {
             <Route path='/postjob' element={<PostAJob></PostAJob>} />
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
+            <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
