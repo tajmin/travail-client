@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import { Button, TextField } from '@mui/material';
 import { useForm } from "react-hook-form";
 
 const style = {
@@ -34,10 +33,10 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
-    
+    handleUpdateClose()
     const proced = window.confirm("Are you want to update?")
         if(proced){
-            fetch(``, {
+            fetch(`https://pacific-lowlands-19741.herokuapp.com/users`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
@@ -49,26 +48,11 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
         .then(data =>{
             if(data.modifiedCount > 0){
                 alert('update Successfully')
-                setUsers({});
-                handleUpdateClose()
-            }
-        })
-        }
+                setUsers({});               
+            };
+        });
+      };
   };
-
-
-    
-
-    // const handleEditProfile = (e) =>{
-    //     alert("Edited")
-    //     const userinfo = {
-    //         ...users,
-    //       }
-    //       console.log(userinfo)
-
-    //     handleUpdateClose()
-    //     e.preventDefault()
-    // }
     
     return (
         <>
@@ -116,61 +100,6 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
 
               <input type="submit" />
 
-                {/* <TextField 
-                sx={{width: "90%", m: 1}}
-                id= "outlined-size-small"
-                name= "userName"
-                onBlur = {handleOnBlur}
-                defaultValue= {user.displayName}
-                size='small'
-                >
-                </TextField>
-                <TextField 
-                sx={{width: "90%", m: 1}}
-                id= "outlined-size-small"
-                name= "email"
-                onBlur = {handleOnBlur}
-                defaultValue= {user.email}
-                size='small'
-                >
-                </TextField>
-                <TextField 
-                sx={{width: "90%", m: 1}}
-                id= "outlined-size-small"
-                name= "phone"
-                onBlur = {handleOnBlur}
-                defaultValue= "Phone"
-                size='small'
-                >
-                </TextField>
-                <TextField 
-                sx={{width: "90%", m: 1}}
-                id= "outlined-size-small"
-                name= "education"
-                onBlur = {handleOnBlur}
-                defaultValue= "Education"
-                size='small'
-                >
-                </TextField>
-                <TextField 
-                sx={{width: "90%", m: 1}}
-                id= "outlined-size-small"
-                name= "experience"
-                onBlur = {handleOnBlur}
-                defaultValue= "Job Experience"
-                size='small'
-                >
-                </TextField>
-                <TextField 
-                sx={{width: "90%", m: 1}}
-                id= "outlined-size-small"
-                name= "skills"
-                onBlur = {handleOnBlur}
-                defaultValue= "Skills"
-                size='small'
-                >
-                </TextField> */}
-                {/* <Button type='submit' variant='contained'>Edit</Button> */}
             </form>
           </Box>
         </Fade>
@@ -180,8 +109,3 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
 };
 
 export default UpdateProfail;
-
-
-
-// Heroku Site
-// https://whispering-crag-72275.herokuapp.com/
