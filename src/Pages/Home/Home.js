@@ -1,7 +1,5 @@
 import React from 'react';
 import Navbar from '../../components/Shared/Navbar';
-import About from '../About/About';
-import Contact from '../Contact/Contact';
 import Banner from './Banner/Banner';
 import CurrentJob from './CurrentJob/CurrentJob';
 import Footer from './Footer/Footer';
