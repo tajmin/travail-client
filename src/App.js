@@ -9,6 +9,8 @@ import Home from './Pages/Home/Home';
 import Jobs from './Pages/Jobs/Jobs';
 import Login from './Pages/Login/Login';
 import PostAJob from './Pages/PostAJob/PostAJob';
+import SignUp from './Pages/SignUp/SignUp';
+import ProfailDrawer from './Pages/Profail/ProfailDrawer/ProfailDrawer'
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path='/' element={<Home></Home>} />
             <Route path='/jobs' element={<Jobs></Jobs>} />
             <Route path='/postjob' element={<PostAJob></PostAJob>} />
+            <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
+            <Route path='/sign-up' element={<SignUp></SignUp>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
