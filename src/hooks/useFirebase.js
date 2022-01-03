@@ -98,7 +98,7 @@ const useFirebase = () => {
     //save user to database
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://whispering-crag-72275.herokuapp.com/', {
+        fetch('https://pacific-lowlands-19741.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
