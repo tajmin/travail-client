@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Shared/Navbar';
+import About from '../About/About';
 import Banner from './Banner/Banner';
 import CurrentJob from './CurrentJob/CurrentJob';
 import Footer from './Footer/Footer';
@@ -16,6 +17,7 @@ const Home = () => {
             <JobSeeker></JobSeeker>
             <RemoteHub></RemoteHub>
             <CurrentJob></CurrentJob>
+            <About></About>
             <Footer></Footer>
         </div>
     );
