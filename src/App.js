@@ -10,6 +10,7 @@ import Jobs from './Pages/Jobs/Jobs';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import ProfailDrawer from './Pages/Profail/ProfailDrawer/ProfailDrawer'
+import MyApplication from './Pages/Profail/MyApplicationf/MyApplication';
 
 function App() {
   return (

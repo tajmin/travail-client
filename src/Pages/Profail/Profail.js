@@ -19,8 +19,8 @@ const Profail = () => {
     let {email} = user;
     console.log(email)
     const [users, setUsers] = useState()
-    useEffect(()=>{
-        const url = `https://pacific-lowlands-19741.herokuapp.com/users/${email}`;
+    const url = `https://pacific-lowlands-19741.herokuapp.com/users/${email}`;
+    useEffect(()=>{  
         fetch(url)
         .then(res => res.json())
         .then(data => setUsers(data))
@@ -65,7 +65,7 @@ const Profail = () => {
                         <Container style={{textAlign: "left", width: "600px"}}>
                             <Grid xs={12} md={12}>
                             <Typography variant='h5' style={{fontWeight: 600}}>
-                            Education: <span style={{fontWeight:500, fontSize: 20, marginLeft: "100px"}}>{users?.education}</span>
+                            Education: <span style={{fontWeight:500, fontSize: 20, marginLeft: "70px"}}>{users?.education}</span>
                             </Typography>
                             <Typography variant='h5' style={{fontWeight: 600}}>
                             Experience: <span style={{fontWeight:500, fontSize: 20, marginLeft: "58px"}}>{users?.experience}</span>

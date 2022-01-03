@@ -12,6 +12,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
+  height: 500,
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -33,6 +34,7 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
+    console.log(data)
     handleUpdateClose()
     const proced = window.confirm("Are you want to update?")
         if(proced){
@@ -97,7 +99,7 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
               <input {...register("skills")}
               placeholder='Skills'
               onBlur = {handleOnBlur}/>
-
+              <br/>
               <input type="submit" />
 
             </form>
