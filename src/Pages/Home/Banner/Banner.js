@@ -24,9 +24,9 @@ const Banner = () => {
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde ab velit et nisi eveniet, dignissimos animi repellendus eaque rem dolores!
                         </Typography>
                         <Typography variant='h5' style={{marginTop: "15px"}}>
-                            <Button variant='contained' style={{backgroundColor: "#65F7EC", marginRight: "10px", borderRadius: "30px"}}>Post Job for Free</Button>
+                            <Button variant='contained' style={{backgroundColor: "#1976d2", marginRight: "10px", borderRadius: "30px"}}>Post Job for Free</Button>
                             or
-                            <Button variant='contained' style={{backgroundColor: "#65F7EC", marginLeft: "10px", borderRadius: "30px"}}>Post Job for Free</Button>
+                            <Button variant='contained' style={{backgroundColor: "#1976d2", marginLeft: "10px", borderRadius: "30px"}}>Post Job for Free</Button>
                         </Typography>
                     </Box>
                 </Grid>
