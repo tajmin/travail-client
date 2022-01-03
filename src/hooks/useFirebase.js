@@ -58,6 +58,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
+                // save user to database after creation.
                 saveUser(user.email, user.displayName, 'PUT');
                 setAuthError('');
                 const destination = location?.state?.from || '/';
@@ -97,7 +98,7 @@ const useFirebase = () => {
     //save user to database
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://murmuring-brook-63531.herokuapp.com/users', {
+        fetch('https://whispering-crag-72275.herokuapp.com/', {
             method: method,
             headers: {
                 'content-type': 'application/json'

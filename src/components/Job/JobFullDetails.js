@@ -1,5 +1,5 @@
 import { FavoriteBorder, LocationOn } from '@mui/icons-material';
-import { Button, Card, Container, CssBaseline,  Typography } from '@mui/material';
+import { Button, Card, Container, CssBaseline, Typography } from '@mui/material';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const JobFullDetails = () => {
 
 
-   
+
 
 
 
@@ -32,9 +32,6 @@ const JobFullDetails = () => {
             <Box sx={{ flexGrow: 1 }} >
                 <Grid container spacing={2} >
                     <Grid item xs={12} md={2}>
-                        {/* <Item>
-                            <Button variant="contained">Upload Your Resume</Button>
-                        </Item> */}
                     </Grid>
                     <Grid item xs={12} md={7} >
                         <Item border={1}>
@@ -46,7 +43,7 @@ const JobFullDetails = () => {
                                     National Processing
                                 </Typography>
                                 <Typography>
-                                   <LocationOn/> 472 W 800 N, Orem, UT 84057
+                                    <LocationOn /> 472 W 800 N, Orem, UT 84057
                                 </Typography>
                                 <Typography variant="body2">
                                     Hybrid remote
@@ -107,15 +104,15 @@ const JobFullDetails = () => {
 
                                     Pay: $95,000.00 - $106,000.00 per year
 
-                                   <Typography variant="h6">Skill Requires : </Typography>
+                                    <Typography variant="h6">Skill Requires : </Typography>
                                     <ul>
                                         <li>React JS</li>
                                         <li>Node JS</li>
                                         <li>Vanilla Javascript JS</li>
                                         <li>MongoDB or NoSQL Database JS</li>
                                     </ul>
-                                    
-                                    </Typography>
+
+                                </Typography>
                             </Container>
                         </Item>
                     </Grid>

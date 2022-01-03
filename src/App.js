@@ -8,6 +8,7 @@ import AuthProvider from './context/AuthProvider';
 import Home from './Pages/Home/Home';
 import Jobs from './Pages/Jobs/Jobs';
 import Login from './Pages/Login/Login';
+import PostAJob from './Pages/PostAJob/PostAJob';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path='/login' element={<Login></Login>} />
             <Route path='/' element={<Home></Home>} />
-            <Route path='/jobs' lement={<Jobs></Jobs>} />
+            <Route path='/jobs' element={<Jobs></Jobs>} />
+            <Route path='/postjob' element={<PostAJob></PostAJob>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
