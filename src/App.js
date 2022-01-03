@@ -12,6 +12,7 @@ import PostAJob from './Pages/PostAJob/PostAJob';
 import SignUp from './Pages/SignUp/SignUp';
 import ProfailDrawer from './Pages/Profail/ProfailDrawer/ProfailDrawer'
 import MyApplication from './Pages/Profail/MyApplicationf/MyApplication';
+import AllApplication from './Pages/Profail/AllApplications/AllApplicaions';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
             <Route path='/my-application' element={<MyApplication></MyApplication>} />
+            <Route path='/all-application' element={<AllApplication></AllApplication>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
