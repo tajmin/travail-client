@@ -43,7 +43,7 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
     }
     
     return (
-        <div>
+        <>
             <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -120,7 +120,7 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
           </Box>
         </Fade>
       </Modal>
-        </div>
+        </>
     );
 };
 
