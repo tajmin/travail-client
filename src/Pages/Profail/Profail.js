@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Link, Typography } from '@mui/material';
+import { Button, Container, Grid, Link, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
@@ -16,7 +16,6 @@ const Profail = () => {
     const handleUpdateClose = () => setOpen(false);
 
     const {user} = useAuth();
-    console.log(user)
     const [users, setUsers] = useState()
     useEffect(()=>{
         const url = ``;
@@ -60,7 +59,22 @@ const Profail = () => {
                                 </Box>
                             </Grid>
                         </Grid>
-                        
+                        <Container style={{textAlign: "left", border: "1px solid gray", width: "600px"}}>
+                            <Grid xs={12} md={12}>
+                            <Typography variant='h5' style={{fontWeight: 600}}>
+                                Name: <span style={{fontWeight:500, fontSize: 20, marginLeft: "100px"}}>user.displaName</span>
+                            </Typography>
+                            <Typography variant='h5' style={{fontWeight: 600}}>
+                                Education: <span style={{fontWeight:500, fontSize: 20, marginLeft: "58px"}}>user.displaNamesa</span>
+                            </Typography>
+                            <Typography variant='h5' style={{fontWeight: 600}}>
+                                Experience: <span style={{fontWeight:500, fontSize: 20, marginLeft: "45px"}}>user.displaName</span>
+                            </Typography>
+                            <Typography variant='h5' style={{fontWeight: 600}}>
+                                Skills: <span style={{fontWeight:500, fontSize: 20, marginLeft: "105px"}}>user.displaName</span>
+                            </Typography>
+                            </Grid>
+                        </Container>
                     </Box>
                 </Grid>
                 ))}
