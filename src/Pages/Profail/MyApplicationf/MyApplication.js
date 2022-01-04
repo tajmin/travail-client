@@ -1,19 +1,39 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid, Link, Typography } from '@mui/material';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+import useAuth from "../../../hooks/useAuth";
+
 
 
 const MyApplication = () => {
+    const {user} = useAuth();
+    let {email} = user;
+    console.log(email)
+    const [applies, setApplies] = useState();
+    useEffect(()=>{
+        fetch(`https://pacific-lowlands-19741.herokuapp.com/applied-jobs/${email}`)
+        .then(res => res.json())
+        .then(data => setApplies(data))
+    }, [])
+    console.log(applies)
     return (
         <Container style={{margin: "56px"}}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={3}>
-                    <Grid item xs>
-                        <Grid style={{ height: "30px", backgroundColor: "#0B7806", marginBottom: "30px"}}>
-                            <Typography style={{color: "white"}}>
-                                My Application
+                    <Grid item xs={12}>
+                        <Grid 
+                            style={{ 
+                            height: "30px", 
+                            backgroundColor: "#0B7806", 
+                            marginBottom: "30px"
+                            }}>
+                            <Typography 
+                                style={{
+                                color: "white",
+                                }}>
+                                Applied Job
                             </Typography>
                         </Grid>
                         
@@ -22,27 +42,59 @@ const MyApplication = () => {
                             {Array.from(Array(6)).map((_, index) => (
                             <Grid item xs={12} sm={12} md={12} key={index}>
                                 <Grid>
-                                    <Grid xs={12} md={12} style={{display: "flex", margin: "5px"}}>
-                                        <Grid xs={3} md={3} style={{textAlign: "right", marginRight: "15px"}}>
+                                    <Grid xs={12} md={12} 
+                                        style={{
+                                        display: "flex", 
+                                        margin: "5px"
+                                        }}>
+                                        <Grid xs={3} md={3} 
+                                            style={{
+                                            textAlign: "right", 
+                                            marginRight: "15px"
+                                            }}>
                                             <Typography>
                                                 <HomeWorkIcon style={{color: "#13F7B5"}}/>
                                             </Typography>
-                                            <img style={{width: "30px", borderRadius: "45px"}} src="https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/photos/term-bg-1-c98135712157fb21286eafd480f610f9.jpg" alt="" />
+                                            <img 
+                                            style={{
+                                                width: "30px", 
+                                                borderRadius: "45px"
+                                                }} 
+                                                src="https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/photos/term-bg-1-c98135712157fb21286eafd480f610f9.jpg" 
+                                                alt="" />
                                         </Grid>
-                                        <Grid xs={6} md={6} style={{textAlign: "left", display: "flex"}}>
+                     {/* ========== All Applied jobs ==========*/}
+                                        <Grid xs={6} md={6} 
+                                        style={{
+                                            textAlign: "left", 
+                                            display: "flex",
+                                            }}>
                                             <Grid>
-                                                <Typography style={{fontSize: 22, fontWeight: 600}}>
+                                                <Typography 
+                                                    style={{
+                                                    fontSize: 22, 
+                                                    fontWeight: 600
+                                                    }}>
                                                     Textify Al
                                                 </Typography>
-                                                <Typography style={{fontSize: 20, fontWeight: 500}}>
+                                                <Typography 
+                                                    style={{
+                                                    fontSize: 20, 
+                                                    fontWeight: 500
+                                                    }}>
                                                     Frond-end developer
                                                 </Typography>
-                                                <Typography style={{fontSize: 14, fontWeight: 600}}>
+                                                <Typography 
+                                                    style={{
+                                                    fontSize: 14, 
+                                                    fontWeight: 600
+                                                    }}>
                                                     Unites-state
                                                 </Typography>
                                             </Grid>   
                                         </Grid>
                                         <Grid xs={3} md={3}>
+                        {/*======== Details of applied job =========*/}
                                             <Link>
                                                 <ArrowForwardIosIcon style={{fontSize: 16}}/>
                                             </Link>

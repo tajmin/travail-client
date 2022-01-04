@@ -21,6 +21,8 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import AllApplication from '../AllApplications/AllApplicaions';
 
+import { grey, lightGreen } from '@mui/material/colors';
+
 const drawerWidth = 200;
 
 function ProfailDrawer(props) {
@@ -39,14 +41,14 @@ function ProfailDrawer(props) {
         <img style={{width: "50px", height: "50px", borderRadius: "80px"}} src={user.photoURL} alt="" />
         </Typography>
       <Divider />
-      <Link to="/application" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>My Application</Button>
+      <Link to="/created-jobs" style={{textDecoration: "none"}}>
+        <Button sx={{color: "inherit"}}>Created Jobs</Button>
       </Link>
-      <Link to="/application" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>My Application</Button>
+      <Link to="/my-applications" style={{textDecoration: "none"}}>
+        <Button sx={{color: "inherit"}}>Applied Jobs</Button>
       </Link>
-      <Link to="/application" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>My Application</Button>
+      <Link to="/postjob" style={{textDecoration: "none"}}>
+        <Button sx={{color: "inherit"}}>Post Job</Button>
       </Link>
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -71,6 +73,7 @@ function ProfailDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: lightGreen[800],
         }}
       >
         <Toolbar>
@@ -84,7 +87,7 @@ function ProfailDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-              MyProfail
+              MyProfile
           </Typography>
         </Toolbar>
       </AppBar>
