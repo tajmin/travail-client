@@ -31,7 +31,7 @@ const Banner = () => {
                         Connecting Professionals With Companies. Effortlessly.
                     </Typography>
                     <Box>
-                        <Button component={Link} to={'/'}
+                        <Button component={Link} to={'/jobs'}
                             sx={{
                                 borderRadius: '1.5rem',
                                 px: 2,
@@ -48,7 +48,7 @@ const Banner = () => {
                             endIcon={<Icon>search</Icon>}>
                             Browse Jobs
                         </Button>
-                        <Button component={Link} to={'/'}
+                        <Button component={Link} to={'/postjob'}
                             variant="contained" size="large"
                             sx={{
                                 ml: 2,
