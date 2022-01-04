@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import { useParams } from 'react-router-dom';
 import Modal from '@mui/material/Modal';
 import { useForm } from "react-hook-form";
+import useAuth from '../../hooks/useAuth';
 
 const style = {
     position: 'absolute',
@@ -36,11 +37,14 @@ const JobFullDetails = () => {
 
     const { id } = useParams();
     const [job, setJob] = React.useState([]);
+    const { user } = useAuth();
+    const email = user.email;
+    // console.log(email);
 
     const { companyName, description, jobTitle, location, salary, workingHour } = job;
 
     React.useEffect(() => {
-        fetch(`http://localhost:2222/availableJobs/${id}`)
+        fetch(`https://pacific-lowlands-19741.herokuapp.com/availableJobs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setJob(data);
@@ -56,9 +60,14 @@ const JobFullDetails = () => {
     //react hook form
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
+
+        data.jobId = id;
+
+
         // const jobdetails = job;
         // jobDetails.candidate.push(user)
-        fetch('http://localhost:2222/insertApplication', {
+
+        fetch('https://pacific-lowlands-19741.herokuapp.com/insertApplication', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -114,13 +123,17 @@ const JobFullDetails = () => {
 
                                 <>
                                     <div>
-                                        <Button variant="contained" sx={{ margin: "20px 0px" }} onClick={handleOpen}>Apply Now</Button>
+                                        {
+                                            email &&
+                                        <Button variant="contained" sx={{ margin: "20px 0px" }} onClick={handleOpen}>Apply Now</Button>}
+
                                         <Modal
                                             open={open}
                                             onClose={handleClose}
                                             aria-labelledby="modal-modal-title"
                                             aria-describedby="modal-modal-description"
                                         >
+                                            
                                             <Box sx={style}>
                                                 <Typography sx={{ margin: "20px 0px" }} color="success" id="modal-modal-title" variant="h5" component="h2">
                                                     Fill the form with correct information.
@@ -199,15 +212,6 @@ const JobFullDetails = () => {
 
                 </Grid>
             </Box>
-
-
-
-
-
-
-
-
-
 
         </>
     );
