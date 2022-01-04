@@ -39,7 +39,6 @@ const JobFullDetails = () => {
     const [job, setJob] = React.useState([]);
     const { user } = useAuth();
     const email = user.email;
-    // console.log(email);
 
     const { companyName, description, jobTitle, location, salary, workingHour } = job;
 
@@ -61,13 +60,9 @@ const JobFullDetails = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        data.jobId = id;
+        data.job = {...job};
 
-
-        // const jobdetails = job;
-        // jobDetails.candidate.push(user)
-
-        fetch('https://pacific-lowlands-19741.herokuapp.com/insertApplication', {
+        fetch('https://pacific-lowlands-19741.herokuapp.com/apply-job', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -148,7 +143,10 @@ const JobFullDetails = () => {
 
                                                     <TextField sx={{ marginBottom: "20px" }} {...register("fullName")} fullWidth label="Full Name" id="fullWidth" />
 
-                                                    <TextField sx={{ marginBottom: "20px" }} {...register("email")} fullWidth label="Email" id="fullWidth" />
+                                                    <TextField sx={{ marginBottom: "20px" }} {...register("email")}
+                                                    defaultValue={email}
+                                                    disabled
+                                                    fullWidth label="Email" id="fullWidth" />
 
                                                     <TextField sx={{ marginBottom: "20px" }} {...register("phone")} fullWidth label="Phone Number" id="fullWidth" />
 
