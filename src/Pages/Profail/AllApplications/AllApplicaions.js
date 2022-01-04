@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 
-const MyApplication = () => {
+const AllApplication = () => {
     return (
         <Container style={{margin: "56px"}}>
             <Box sx={{ flexGrow: 1 }}>
@@ -13,7 +13,7 @@ const MyApplication = () => {
                     <Grid item xs>
                         <Grid style={{ height: "30px", backgroundColor: "#0B7806", marginBottom: "30px"}}>
                             <Typography style={{color: "white"}}>
-                                My Application
+                               My All Application
                             </Typography>
                         </Grid>
                         
@@ -60,4 +60,4 @@ const MyApplication = () => {
     );
 };
 
-export default MyApplication;
+export default AllApplication;
