@@ -41,14 +41,14 @@ function ProfailDrawer(props) {
         <img style={{width: "50px", height: "50px", borderRadius: "80px"}} src={user.photoURL} alt="" />
         </Typography>
       <Divider />
-      <Link to="/application" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>My Application</Button>
+      <Link to="/created-jobs" style={{textDecoration: "none"}}>
+        <Button sx={{color: "inherit"}}>Created Jobs</Button>
       </Link>
-      <Link to="/application" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>My Application</Button>
+      <Link to="/my-applications" style={{textDecoration: "none"}}>
+        <Button sx={{color: "inherit"}}>Applied Jobs</Button>
       </Link>
-      <Link to="/application" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>My Application</Button>
+      <Link to="/postjob" style={{textDecoration: "none"}}>
+        <Button sx={{color: "inherit"}}>Post Job</Button>
       </Link>
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
