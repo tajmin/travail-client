@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <Container fixed sx={{ minHeight: '60vh', py: 4 }}>
-            <Grid container sx={{ py: 10 }} spacing={8}>
+        <Container fixed sx={{ minHeight: '60vh', py: 8 }}>
+            <Grid container sx={{ my: 10 }} spacing={8}>
                 <Grid sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: { xs: 'center', lg: 'flex-start' } }}
                     item xs={12} md={6}>
                     <Typography
