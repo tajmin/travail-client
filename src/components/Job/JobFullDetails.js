@@ -37,7 +37,7 @@ const JobFullDetails = () => {
     const { id } = useParams();
     const [job, setJob] = React.useState([]);
 
-    const { companyName, description, jobTitle, location,  salary, workingHour,} = job;
+    const { companyName, description, jobTitle, location, salary, workingHour, } = job;
 
     React.useEffect(() => {
         fetch(`http://localhost:2222/availableJobs/${id}`)
@@ -56,23 +56,25 @@ const JobFullDetails = () => {
     //react hook form
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-       fetch('http://localhost:2222/insertApplication',{
-           method : "POST",
-           headers:{
-               "content-type": "application/json"
-           },
-           body: JSON.stringify(data)   
-       })
-       .then(res=> res.json())
-       .then(data=>{
-           if(data.acknowledged){
-               alert("Application submitted successfully. We will notify you soon.Till then take care bye bye.")
-               reset()
-           }
-       })
+        // const jobdetails = job;
+        // jobDetails.candidate.push(user)
+        fetch('http://localhost:2222/insertApplication', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert("Application submitted successfully. We will notify you soon.Till then take care bye bye.")
+                    reset()
+                }
+            })
     };
 
-    
+
 
 
 
@@ -98,7 +100,7 @@ const JobFullDetails = () => {
                                     {companyName}
                                 </Typography>
                                 <Typography>
-                                    <LocationOn sx={{ fontSize: "16px"}} /> {location}
+                                    <LocationOn sx={{ fontSize: "16px" }} /> {location}
                                 </Typography>
                                 <Typography variant="body2">
                                     {workingHour}
