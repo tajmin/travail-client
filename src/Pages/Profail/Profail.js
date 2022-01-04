@@ -17,7 +17,7 @@ const Profail = () => {
 
     const {user} = useAuth();
     let {email} = user;
-    console.log(email)
+    
     const [users, setUsers] = useState()
     const url = `https://pacific-lowlands-19741.herokuapp.com/users/${email}`;
     useEffect(()=>{  
