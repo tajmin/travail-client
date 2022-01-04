@@ -28,7 +28,7 @@ function App() {
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
             <Route path='/my-application' element={<MyApplication></MyApplication>} />
-            <Route path='/all-post' element={<AllApplication></AllApplication>} />
+            <Route path='/creat-job' element={<AllApplication></AllApplication>} />
             <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
           </Routes>
         </BrowserRouter>

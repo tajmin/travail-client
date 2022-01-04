@@ -21,6 +21,8 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import AllApplication from '../AllApplications/AllApplicaions';
 
+import { grey, lightGreen } from '@mui/material/colors';
+
 const drawerWidth = 200;
 
 function ProfailDrawer(props) {
@@ -71,6 +73,7 @@ function ProfailDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: lightGreen[800],
         }}
       >
         <Toolbar>
@@ -84,7 +87,7 @@ function ProfailDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-              MyProfail
+              MyProfile
           </Typography>
         </Toolbar>
       </AppBar>
