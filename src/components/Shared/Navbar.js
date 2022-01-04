@@ -88,13 +88,13 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <MenuItem as={Link} to="/" onClick={handleCloseNavMenu}>
+              <MenuItem as={Link} to="/jobs" onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">Jobs</Typography>
               </MenuItem>
-              <MenuItem as={Link} to="/" onClick={handleCloseNavMenu}>
+              <MenuItem as={Link} to="/about" onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">About Us</Typography>
               </MenuItem>
-              <MenuItem as={Link} to="/" onClick={handleCloseNavMenu}>
+              <MenuItem as={Link} to="/contact" onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">Contact</Typography>
               </MenuItem>
               <MenuItem as={Link} to="/" onClick={handleCloseNavMenu}>
@@ -112,7 +112,7 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 0, mr: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Typography as={Link} to={'/my-player'}
+            <Typography as={Link} to={'/jobs'}
               sx={{
                 my: 2,
                 mr: 2,
@@ -126,7 +126,7 @@ const ResponsiveAppBar = () => {
               variant="h6" component="div">
               Jobs
             </Typography>
-            <Typography as={Link} to={'/my-player'}
+            <Typography as={Link} to={'/about'}
               sx={{
                 my: 2,
                 mr: 2,
@@ -140,7 +140,7 @@ const ResponsiveAppBar = () => {
               variant="h6" component="div">
               About Us
             </Typography>
-            <Typography as={Link} to={'/my-player'}
+            <Typography as={Link} to={'/contact'}
               sx={{
                 my: 2,
                 mr: 2,
