@@ -13,7 +13,7 @@ const About = () => {
             <Grid container spacing={1} sx={{ml:2, mb:2}}  style={{textAlign: "left"}}>
                 <Grid item md={12} lg={6} style={{borderRight:'2px solid #7cb342'}}>
                     <Grid container spacing={1}>
-                        <Grid item md={12} lg={6}>
+                        <Grid item md={12} lg={6} sm={12} xs={12}>
                             <img style={{width:'100%', height:'200px', margin:'5px', borderRadius:'10px'}} src="https://image.freepik.com/free-vector/tiny-people-searching-business-opportunities_74855-19928.jpg" alt="" />
                         </Grid>
                         <Grid item md={12} lg={6} sx={{mt:4}}>
