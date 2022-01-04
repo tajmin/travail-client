@@ -14,6 +14,8 @@ import ProfailDrawer from './Pages/Profail/ProfailDrawer/ProfailDrawer'
 import MyApplication from './Pages/Profail/MyApplicationf/MyApplication';
 import AllApplication from './Pages/Profail/AllApplications/AllApplicaions';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             <Route path='/sign-up' element={<SignUp></SignUp>} />
             <Route path='/my-application' element={<MyApplication></MyApplication>} />
             <Route path='/all-post' element={<AllApplication></AllApplication>} />
+            <Route path='/about' element={<About></About>} />
+            <Route path='/contact' element={<Contact></Contact>} />
             <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
           </Routes>
         </BrowserRouter>
