@@ -31,7 +31,7 @@ const Instructions = () => {
                                 component="img"
                                 alt="green iguana"
                                 height="250"
-                                image="https://image.shutterstock.com/image-photo/stock-vector-business-people-holding-megaphone-and-shouting-through-it-announcement-of-good-news-attention-450w-2053129028.jpg"
+                                image="https://image.freepik.com/free-vector/multiethnic-people-talking-discuss-social-network-two-friend-men-women-speaking-couples-with-speech-bubbles-character-dialogue-concept_90220-228.jpg"
                             />
                             <CardContent sx={{ minHeight: '150px' }}>
                                 <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">

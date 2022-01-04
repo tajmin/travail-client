@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../../components/Shared/Navbar';
 import Banner from './Banner/Banner';
 import CurrentJob from './CurrentJob/CurrentJob';
+import Footer from './Footer/Footer';
 import Instructions from './Instructions/Instructions';
 import JobSeeker from './JobSeeker/JobSeeker';
 import RemoteHub from './RemoteHub/RemoteHub';
@@ -15,6 +16,7 @@ const Home = () => {
             <JobSeeker></JobSeeker>
             <RemoteHub></RemoteHub>
             <CurrentJob></CurrentJob>
+            <Footer></Footer>
         </div>
     );
 };

@@ -14,6 +14,8 @@ import ProfailDrawer from './Pages/Profail/ProfailDrawer/ProfailDrawer'
 import MyApplication from './Pages/Profail/MyApplicationf/MyApplication';
 import AllApplication from './Pages/Profail/AllApplications/AllApplicaions';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   return (
