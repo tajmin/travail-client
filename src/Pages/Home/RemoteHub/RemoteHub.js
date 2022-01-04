@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Card, CardContent, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
@@ -9,101 +9,128 @@ import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
 import MarkEmailReadIcon from '@mui/icons-material/MarkEmailRead';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import PaidIcon from '@mui/icons-material/Paid';
+import { grey, lightGreen } from '@mui/material/colors';
 
 
 const RemoteHub = () => {
     return (
-        <Container style={{marginTop: "40px"}}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} style={{textAlign: "center"}}>
-                    <Grid>
-                    <Typography variant='h4' style={{fontWeight: 600}}>
-                        Why RemoteHub?
-                    </Typography>
-                    </Grid>
-                </Grid>
-                <Grid>
-                    <Box sx={{ width: '100%', my: 5 }}>
-                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} style={{textAlign: "left"}}>
-                            <Grid item xs={12} md={3}>
-                                <KeyboardCommandKeyIcon sx={{ color: '#8E2CF7', fontSize: 50}}/>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
+        <Box sx={{ backgroundColor: lightGreen[50], py: 5 }}>
+            <Container maxWidth="xl" sx={{ py: 10 }}>
+            <Typography gutterBottom
+                    sx={{ fontWeight: 'bold', color: grey[800], pt: 2 }}
+                    variant="h2" component="div"
+                    fontSize={{ lg: 50, xs: 30 }}>
+                    Why Travail?
+                </Typography>
+
+                <Grid sx={{ pb: 6 }} container spacing={4}>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                        <KeyboardCommandKeyIcon sx={{ color: '#8E2CF7', fontSize: 50}}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
                                     Free Job Posting
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     Post an unlimited number of your open vacancies absolutely for free.
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <MarkEmailReadIcon sx={{ color: '#0B7806', fontSize: 50 }}/>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                        <MarkEmailReadIcon sx={{ color: '#0B7806', fontSize: 50 }}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
                                     Talent Marketplace
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     Post jobs and review applications, or browse and order available services.
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <SearchIcon sx={{ color: 'blue', fontSize: 50 }}/>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                            <SearchIcon sx={{ color: 'blue', fontSize: 50 }}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
                                     All Types of Jobs
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     From full-time and part-time jobs, to contract, internship, freelance, and volunteering.
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <LocationOnIcon sx={{ color: '#0B7806', fontSize: 50 }}/>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                            <LocationOnIcon sx={{ color: '#0B7806', fontSize: 50 }}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
                                     All Locations
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     From remote in any location to specific regions, countries, and non-remote jobs.
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <Typography>
-                                    <ThumbUpIcon sx={{ color: '#A5DA58', fontSize: 50 }}></ThumbUpIcon>
-                                </Typography>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                            <ThumbUpIcon sx={{ color: '#A5DA58', fontSize: 50 }}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
                                     Smart Matching
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     Receive recommendations about the best candidates for yours jobs.
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <GroupIcon sx={{ color: '#49D10E ', fontSize: 50 }}/>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
-                                    Power of Networking
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                            <GroupIcon sx={{ color: '#49D10E ', fontSize: 50 }}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
+                                    Power of Network
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     Expand your network to find more candidates or jobs throug introductions.
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <EmojiObjectsIcon sx={{ color: '#F6640B', fontSize: 50 }}/>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                            <EmojiObjectsIcon sx={{ color: '#F6640B', fontSize: 50 }}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
                                     Creativity Showcase
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     Browse portfolios to find the best talent, ideas and professional feedback.
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <PaidIcon sx={{ color: '#49D10E', fontSize: 50 }}/>
-                                <Typography variant='h5' sx={{my: 3}} style={{fontWeight: 600}}>
-                                    Integrated Payments
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} lg={3}>
+                        <Card sx={{ '&:hover': { boxShadow: 3 } }}>
+                            <PaidIcon sx={{ color: '#49D10E', fontSize: 50 }}/>
+                            <CardContent sx={{ minHeight: '150px' }}>
+                                <Typography sx={{ pb: 1.5 }} gutterBottom variant="h6" component="div">
+                                    Integreated Payments
                                 </Typography>
-                                <Typography variant='h6' sx={{color: "#656C6C"}}>
+                                <Typography variant="body1" color="text.secondary">
                                     Pay contractors and freelancers on RemoteHub with a sate escrow option.
                                 </Typography>
-                            </Grid>
-                        </Grid>
-                    </Box>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Container>
+            </Container>
+        </Box>
     );
 };
 
