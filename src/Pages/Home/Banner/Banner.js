@@ -36,8 +36,10 @@ const Banner = () => {
                                 borderRadius: '1.5rem',
                                 px: 2,
                                 py: 1.25,
+                                border: `2px solid ${lightGreen[600]}`,
                                 backgroundColor: lightGreen[600],
                                 '&:hover': {
+                                    border: '2px solid black',
                                     backgroundColor: 'black',
                                     color: 'white'
                                 }
