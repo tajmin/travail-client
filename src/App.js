@@ -28,6 +28,7 @@ function App() {
             <Route path='/sign-up' element={<SignUp></SignUp>} />
             <Route path='/my-application' element={<MyApplication></MyApplication>} />
             <Route path='/all-application' element={<AllApplication></AllApplication>} />
+            <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

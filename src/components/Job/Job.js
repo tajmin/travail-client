@@ -1,22 +1,25 @@
 import './Job.css';
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Job = (props) => {
-    const { id, title, country, company, type, jobDesc, salary, skills} = props.job;
+    const {companyName,deadline,description,jobTitle,location,requiredSkill,salary,workingHour,_id} = props.job;
     const handleSetJob = props.handleSetJob;
 
     return (
         <>
             <div className="job-card">
                 <div className="card-top">
-                    <h3>{title}</h3>
-                    <span>{company}</span> 
-                    <span>{country}</span>
+                    <Link to={`/fullDetails/${_id}`}>
+                    <h3>{jobTitle}</h3>
+                    </Link>
+                    <span>{companyName}</span> 
+                    <span>{location}</span>
                     <p>{salary}</p>
                 </div>
                 <div className="card-bottom">
-                    <p>{jobDesc.slice(0, 200)}</p>
-                    <button onClick={()=>handleSetJob(id)} className="card-button" >Learn More</button>
+                    <p>{description.slice(0, 200)}</p>
+                    <button onClick={()=>handleSetJob(_id)} className="card-button" >Learn More</button>
                 </div>
             </div>
         </>
