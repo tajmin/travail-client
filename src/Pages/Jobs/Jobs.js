@@ -23,7 +23,8 @@ const Jobs = () => {
             .then(res => res.json())
             .then(data => {
                 setJobs(data);
-                setDisplayJobs(data)
+                setDisplayJobs(data);
+                setJobId(data[0]._id);
             })
     }, []);
 
@@ -46,7 +47,7 @@ const Jobs = () => {
 
             <div className="search-container">
                 <TextField
-                    sx={{width: "50%"}}
+                    sx={{ width: "50%" }}
                     onChange={handleSearch}
                     placeholder="Search Jobs" />
             </div>
@@ -65,9 +66,12 @@ const Jobs = () => {
                             </Job>)
                     }
                 </div>
+
                 <div className="jobs-container-right">
                     <JobDetails jobId={jobId}></JobDetails>
                 </div>
+
+
             </div>
         </>
     );

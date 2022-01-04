@@ -37,7 +37,7 @@ const JobFullDetails = () => {
     const { id } = useParams();
     const [job, setJob] = React.useState([]);
 
-    const { companyName, description, jobTitle, location, salary, workingHour, } = job;
+    const { companyName, description, jobTitle, location, salary, workingHour } = job;
 
     React.useEffect(() => {
         fetch(`http://localhost:2222/availableJobs/${id}`)
@@ -86,7 +86,7 @@ const JobFullDetails = () => {
 
 
 
-            <Box sx={{ flexGrow: 1 }} >
+            <Box sx={{ flexGrow: 1, backgroundColor: "#F3F2F1" }}  >
                 <Grid container spacing={2} >
                     <Grid item xs={12} md={2}>
                     </Grid>
@@ -191,7 +191,7 @@ const JobFullDetails = () => {
                                 <Card variant="outlined">
                                     <Typography sx={{ borderBottom: 1 }}>Company Info</Typography>
                                     <Button variant="outlined" sx={{ margin: "20px 5px" }}>Follow</Button>
-                                    <Typography>Get job updates from National Processing</Typography>
+                                    <Typography>Get job updates from {companyName}</Typography>
                                 </Card>
                             </Box>
                         </>
