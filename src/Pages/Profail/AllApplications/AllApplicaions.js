@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Container, Grid, Link, Typography } from '@mui/material';
+import { Box, Grid, Link, Typography } from '@mui/material';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import useAuth from '../../../hooks/useAuth';
 
 
 
 const AllApplication = () => {
+    const {user} = useAuth()
+    const {email} = user;
+    const [creatJobs, setcreatJobs] = useState();
+    useEffect(()=>{
+        fetch(`https://pacific-lowlands-19741.herokuapp.com/created-jobs/${email}`)
+        .then(res => res.json())
+        .then(data => setcreatJobs(data))
+    }, [])
 
-    // const [posts, setPosts] = useState();
-    // useEffect(()=>{
-    //     fetch(``)
-    //     .then(res => res.json())
-    //     .then(data => setPosts(data))
-    // }, [])
+    console.log(creatJobs)
 
     return (
         <Grid style={{margin: "56px"}}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={3}>
-                    <Grid item xs>
+                    <Grid item xs={12}>
                         <Grid 
                             style={{ 
                             height: "30px", 
@@ -29,7 +33,7 @@ const AllApplication = () => {
                                 style={{
                                 color: "white",
                                 }}>
-                               Posted Job
+                                My Created Job
                             </Typography>
                         </Grid>
                         

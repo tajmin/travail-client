@@ -13,12 +13,12 @@ const Job = (props) => {
                     <Link to={`/fullDetails/${_id}`}>
                     <h3>{jobTitle}</h3>
                     </Link>
-                    <span>{companyName}</span> 
+                    <h5>{companyName}</h5> 
                     <span>{location}</span>
-                    <p>{salary}</p>
+                    <p>Salary : {salary} BDT</p>
                 </div>
                 <div className="card-bottom">
-                    <p>{description.slice(0, 200)}</p>
+                    <p>{description.slice(0, 200)}...</p>
                     <button onClick={()=>handleSetJob(_id)} className="card-button" >Learn More</button>
                 </div>
             </div>

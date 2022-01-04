@@ -3,22 +3,26 @@ import { Box, Container, Grid, Link, Typography } from '@mui/material';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+import useAuth from "../../../hooks/useAuth";
+
 
 
 const MyApplication = () => {
-
-    // const [applies, setApplies] = useState();
-    // useEffect(()=>{
-    //     fetch(``)
-    //     .then(res => res.json())
-    //     .then(data => setApplies(data))
-    // }, [])
-    
+    const {user} = useAuth();
+    let {email} = user;
+    console.log(email)
+    const [applies, setApplies] = useState();
+    useEffect(()=>{
+        fetch(`https://pacific-lowlands-19741.herokuapp.com/applied-jobs/${email}`)
+        .then(res => res.json())
+        .then(data => setApplies(data))
+    }, [])
+    console.log(applies)
     return (
         <Container style={{margin: "56px"}}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={3}>
-                    <Grid item xs>
+                    <Grid item xs={12}>
                         <Grid 
                             style={{ 
                             height: "30px", 

@@ -27,12 +27,10 @@ function App() {
             <Route path='/' element={<Home></Home>} />
             <Route path='/jobs' element={<Jobs></Jobs>} />
             <Route path='/postjob' element={<PrivateRoute><PostAJob></PostAJob></PrivateRoute>} />
+            <Route path='/created-jobs' element={<PrivateRoute><AllApplication></AllApplication></PrivateRoute>} />
+            <Route path='/my-applications' element={<PrivateRoute><MyApplication></MyApplication></PrivateRoute>} />
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
-            <Route path='/my-application' element={<MyApplication></MyApplication>} />
-            <Route path='/all-post' element={<AllApplication></AllApplication>} />
-            <Route path='/about' element={<About></About>} />
-            <Route path='/contact' element={<Contact></Contact>} />
             <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
           </Routes>
         </BrowserRouter>
