@@ -6,11 +6,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PinterestIcon from '@mui/icons-material/Pinterest';
+import { lightGreen } from '@mui/material/colors';
 
 
 const Footer = () => {
     return (
-        <Grid sx={{background: '#eeeeee', pl:2, pt:2, pb:2}} style={{textAlign: "left"}}>
+        <Grid sx={{backgroundColor: lightGreen[50], pl:2, pt:2, pb:2}} style={{textAlign: "left"}}>
             <Grid container spacing={2}>
                     <Grid item xs={6} md={4} lg={3}>
                         <Typography sx={{mb:2, mt:2}} variant='h4' style={{ fontWeight: 600 }}>Site Name & Logo </Typography>
