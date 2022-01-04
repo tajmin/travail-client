@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Button, Container, FormGroup, TextField, Typography } from '@mui/material';
+import {  Button, Container, TextField, Typography } from '@mui/material';
+import useAuth from '../../hooks/useAuth';
 
 
 const PostAJob = () => {
@@ -13,6 +14,7 @@ const PostAJob = () => {
     const [workingHour, setWorkingHour] = React.useState("");
     const [salary, setSalary] = React.useState("");
     const [deadline, setDeadline] = React.useState("");
+    const {email} = useAuth();
 
 
     const handlePostJob = (e) => {
@@ -26,7 +28,8 @@ const PostAJob = () => {
             requiredSkill,
             workingHour,
             salary,
-            deadline
+            deadline,
+            createdBy: email
         }
         
         fetch('http://localhost:2222/addNewJob',{
@@ -38,19 +41,19 @@ const PostAJob = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
+            if(data.acknowledged){
+                alert("Your hiring poster successfully inserted, now you can make a little bit 'Dance Party' ")
+            }           
         })
-
-
-
     }
 
 
     return (
         <>
             <Container sx={{ backgroundColor: "#F3F2F1" }}>
-                <Typography variant="h3">
-                    Find an Employee With TRAVAIL
+                <Typography variant="h5" sx={{marginBottom:"30px", color: "goldenrod"}}>
+                    Hire an expert with TRAVAIL
+                   
                 </Typography>
 
 

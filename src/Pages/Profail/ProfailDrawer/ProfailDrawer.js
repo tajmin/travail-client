@@ -19,6 +19,7 @@ import { Button, Grid } from '@mui/material';
 import Profail from '../Profail';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import AllApplication from '../AllApplications/AllApplicaions';
 
 const drawerWidth = 200;
 
@@ -83,7 +84,7 @@ function ProfailDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-              Profail
+              MyProfail
           </Typography>
         </Toolbar>
       </AppBar>
