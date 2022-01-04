@@ -31,6 +31,8 @@ function App() {
             <Route path='/my-applications' element={<PrivateRoute><MyApplication></MyApplication></PrivateRoute>} />
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
+            <Route path='/about' element={<About></About>} />
+            <Route path='/contact' element={<Contact></Contact>} />
             <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
           </Routes>
         </BrowserRouter>
