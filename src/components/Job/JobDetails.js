@@ -17,12 +17,12 @@ const JobDetails = ({jobId}) => {
     return (
         <div className="job-details-container">
            <div className="job-title">
-               <h2>{job.Title}</h2>
+               <h2>{job.jobTitle}</h2>
                <p>{job.companyName}</p>
                <p>{job.location}</p>
                <p>{job.description}</p>
-               <p>{job.workingHour}</p>
-               <p>{job.salary}</p>
+               <p>Office Time :{job.workingHour}</p>
+               <p>Salary : {job.salary} BDT</p>
            </div>
         </div>
     );

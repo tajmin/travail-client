@@ -14,9 +14,9 @@ const PostAJob = () => {
     const [workingHour, setWorkingHour] = React.useState("");
     const [salary, setSalary] = React.useState("");
     const [deadline, setDeadline] = React.useState("");
-    const {email} = useAuth();
+    // const {email} = useAuth();
 
-
+    const email = "admin@gmail.com"
     const handlePostJob = (e) => {
         e.preventDefault();
 
