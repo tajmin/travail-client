@@ -91,9 +91,6 @@ const ResponsiveAppBar = () => {
               <MenuItem as={Link} to="/jobs" onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">Jobs</Typography>
               </MenuItem>
-              <MenuItem as={Link} to="/about" onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">About Us</Typography>
-              </MenuItem>
               <MenuItem as={Link} to="/contact" onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">Contact</Typography>
               </MenuItem>
@@ -126,20 +123,7 @@ const ResponsiveAppBar = () => {
               variant="h6" component="div">
               Jobs
             </Typography>
-            <Typography as={Link} to={'/about'}
-              sx={{
-                my: 2,
-                mr: 2,
-                textDecoration: 'none',
-                color: 'white',
-                transition: 'all 0.1s ease-in',
-                '&:hover': {
-                  color: grey[300],
-                }
-              }}
-              variant="h6" component="div">
-              About Us
-            </Typography>
+
             <Typography as={Link} to={'/contact'}
               sx={{
                 my: 2,
