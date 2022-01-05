@@ -8,6 +8,7 @@ initAuth();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -97,7 +98,7 @@ const useFirebase = () => {
 
     //save user to database
     const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
+        const user = { email, displayName, isAdmin: false };
         fetch('https://pacific-lowlands-19741.herokuapp.com/users', {
             method: method,
             headers: {
@@ -108,8 +109,25 @@ const useFirebase = () => {
             .then()
     }
 
+    //Observer: Fetches admin role
+    useEffect(() => {
+        fetch(`https://pacific-lowlands-19741.herokuapp.com/users/admin-role/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setIsAdmin(data.admin)
+                console.log(isAdmin)
+            })
+    }, [user.email, isAdmin])
+
     return {
-        user, isLoading, authError, emailRegistration, emailLogin, signInWithGoogle, logout,
+        user,
+        isLoading,
+        isAdmin,
+        authError,
+        emailRegistration,
+        emailLogin,
+        signInWithGoogle,
+        logout,
     }
 
 }
