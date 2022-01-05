@@ -67,8 +67,7 @@ useEffect(() => {
                 <Area type="monotone" dataKey="opportunity" fill="#8884d8" stroke="#8884d8" />
                 <Bar dataKey="opportunity" barSize={20} fill="#413ea0" />
                 <Line type="monotone" dataKey="opportunity" stroke="red" />
-            <Typography>The chart shows job opportunity by specific category. </Typography>
-
+                
             </ComposedChart>
         </div>
     );
