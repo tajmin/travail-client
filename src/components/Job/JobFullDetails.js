@@ -1,6 +1,5 @@
 import { LocationOn } from '@mui/icons-material';
 import { Button, Card, Container, CssBaseline, TextField, Typography } from '@mui/material';
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -9,6 +8,10 @@ import { useParams } from 'react-router-dom';
 import Modal from '@mui/material/Modal';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { fetchJobDetails } from '../../redux/slices/jobSlice';
+import spinner from '../../images/spinner.gif'
 
 const style = {
     position: 'absolute',
@@ -23,8 +26,6 @@ const style = {
 };
 
 
-
-
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -34,22 +35,18 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const JobFullDetails = () => {
-
+    const dispatch = useDispatch();
+    const isLoading = useSelector((state) => state.jobs.isLoading);
     const { id } = useParams();
-    const [job, setJob] = React.useState([]);
+    const job = useSelector((state) => state.jobs.jobDetails);
     const { user } = useAuth();
-    const email = user.email;
 
     const { companyName, description, jobTitle, location, salary, workingHour } = job;
 
-    React.useEffect(() => {
-        fetch(`https://pacific-lowlands-19741.herokuapp.com/availableJobs/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setJob(data);
-            })
-    }, [id]);
+    useEffect(() => {
+        dispatch(fetchJobDetails(id))
 
+    }, [dispatch, id]);
 
     //modal 
     const [open, setOpen] = React.useState(false);
@@ -60,7 +57,8 @@ const JobFullDetails = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        data.job = {...job};
+        data.job = { ...job };
+        data.email = user.email;
 
         fetch('https://pacific-lowlands-19741.herokuapp.com/apply-job', {
             method: "POST",
@@ -78,8 +76,21 @@ const JobFullDetails = () => {
             })
     };
 
-
-
+    //spinner
+    if (isLoading) {
+        return (
+            <Box
+                sx={{
+                    backgroundColor: '#fff',
+                    height: '100vh',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                <img style={{ margin: '0 auto' }} src={spinner} alt="" />
+            </Box>
+        )
+    }
 
 
     return (
@@ -100,7 +111,7 @@ const JobFullDetails = () => {
                                 <Typography variant="h5">
                                     {jobTitle}
                                 </Typography>
-                                <Typography variant="h6">
+                                <Typography>
                                     {companyName}
                                 </Typography>
                                 <Typography>
@@ -119,8 +130,8 @@ const JobFullDetails = () => {
                                 <>
                                     <div>
                                         {
-                                            email &&
-                                        <Button variant="contained" sx={{ margin: "20px 0px" }} onClick={handleOpen}>Apply Now</Button>}
+                                            user?.email &&
+                                            <Button variant="contained" sx={{ margin: "20px 0px" }} onClick={handleOpen}>Apply Now</Button>}
 
                                         <Modal
                                             open={open}
@@ -128,7 +139,7 @@ const JobFullDetails = () => {
                                             aria-labelledby="modal-modal-title"
                                             aria-describedby="modal-modal-description"
                                         >
-                                            
+
                                             <Box sx={style}>
                                                 <Typography sx={{ margin: "20px 0px" }} color="success" id="modal-modal-title" variant="h5" component="h2">
                                                     Fill the form with correct information.
@@ -143,10 +154,7 @@ const JobFullDetails = () => {
 
                                                     <TextField sx={{ marginBottom: "20px" }} {...register("fullName")} fullWidth label="Full Name" id="fullWidth" />
 
-                                                    <TextField sx={{ marginBottom: "20px" }} {...register("email")}
-                                                    defaultValue={email}
-                                                    disabled
-                                                    fullWidth label="Email" id="fullWidth" />
+
 
                                                     <TextField sx={{ marginBottom: "20px" }} {...register("phone")} fullWidth label="Phone Number" id="fullWidth" />
 
@@ -184,7 +192,7 @@ const JobFullDetails = () => {
 
                                     Pay: $95,000.00 - $106,000.00 per year
 
-                                    <Typography variant="h6">Skill Requires : </Typography>
+                                    <Typography>Skill Requires : </Typography>
                                     <ul>
                                         <li>React JS</li>
                                         <li>Node JS</li>

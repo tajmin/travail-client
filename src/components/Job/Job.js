@@ -1,9 +1,8 @@
 import './Job.css';
-import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const Job = (props) => {
-    const {companyName,deadline,description,jobTitle,location,requiredSkill,salary,workingHour,_id} = props.job;
+    const {companyName,description,jobTitle,location,salary,_id} = props?.job;
     const handleSetJob = props.handleSetJob;
 
     return (
@@ -14,7 +13,7 @@ const Job = (props) => {
                     <h3>{jobTitle}</h3>
                     </Link>
                     <h5>{companyName}</h5> 
-                    <span>{location}</span>
+                    <small>Location : {location}</small>
                     <p>Salary : {salary} BDT</p>
                 </div>
                 <div className="card-bottom">
