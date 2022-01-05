@@ -6,21 +6,17 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Button, Grid } from '@mui/material';
-import Profail from '../Profail';
-import { Link } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
 
 import { lightGreen } from '@mui/material/colors';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const drawerWidth = 150;
+const drawerWidth = 140;
 
-function ProfailDrawer(props) {
-    const {user} = useAuth()
+function AdminDashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -31,18 +27,9 @@ function ProfailDrawer(props) {
   const drawer = (
     <div>
       <Toolbar />
-        <Typography>
-        <img style={{width: "50px", height: "50px", borderRadius: "80px"}} src={user.photoURL} alt="" />
-        </Typography>
       <Divider />
-      <Link to="/created-jobs" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>Created Jobs</Button>
-      </Link>
-      <Link to="/my-applications" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>Applied Jobs</Button>
-      </Link>
-      <Link to="/postjob" style={{textDecoration: "none"}}>
-        <Button sx={{color: "inherit"}}>Post Job</Button>
+      <Link to="/home" style={{textDecoration: "none"}}>
+        <Button sx={{color: "inherit"}}>Home</Button>
       </Link>
     </div>
   );
@@ -57,7 +44,7 @@ function ProfailDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: lightGreen[800],
+          backgroundColor: lightGreen[800]
         }}
       >
         <Toolbar>
@@ -71,7 +58,7 @@ function ProfailDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-              MyProfile
+            Admin
           </Typography>
         </Toolbar>
       </AppBar>
@@ -113,18 +100,17 @@ function ProfailDrawer(props) {
       >
         <Toolbar />
         <Typography paragraph>
-          <Grid>
-              <Grid>
-                <Profail></Profail>
-              </Grid>
-          </Grid>
+         Chart
+        </Typography>
+        <Typography paragraph>
+          Somethings
         </Typography>
       </Box>
     </Box>
   );
 }
 
-ProfailDrawer.propTypes = {
+AdminDashboard.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -132,4 +118,4 @@ ProfailDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default ProfailDrawer;
+export default AdminDashboard;

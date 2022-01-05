@@ -9,14 +9,14 @@ import useAuth from '../../../hooks/useAuth';
 const AllApplication = () => {
     const {user} = useAuth()
     const {email} = user;
-    const [creatJobs, setcreatJobs] = useState();
+    const [createJobs, setcreateJobs] = useState();
     useEffect(()=>{
         fetch(`https://pacific-lowlands-19741.herokuapp.com/created-jobs/${email}`)
         .then(res => res.json())
-        .then(data => setcreatJobs(data))
+        .then(data => setcreateJobs(data))
     }, [])
 
-    console.log(creatJobs)
+    console.log(createJobs)
 
     return (
         <Grid style={{margin: "56px"}}>
@@ -39,8 +39,8 @@ const AllApplication = () => {
                         
                         <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                            {Array.from(Array(6)).map((_, index) => (
-                            <Grid item xs={12} sm={12} md={12} key={index}>
+                            {createJobs?.map((createJob) => (
+                            <Grid item xs={12} sm={12} md={12} key={createJob._id}>
                                 <Grid>
                                     <Grid xs={12} md={12} 
                                         style={{
@@ -55,14 +55,7 @@ const AllApplication = () => {
                                             <Typography>
                                                 <HomeWorkIcon style={{color: "#13F7B5"}}/>
                                             </Typography>
-                                            <img 
-                                            style={{
-                                                width: "30px", 
-                                                borderRadius: "45px"
-                                            }} 
-                                                src="https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/photos/term-bg-1-c98135712157fb21286eafd480f610f9.jpg" 
-                                                alt="" 
-                                            />
+    
                                         </Grid>
                         {/*======== All My Post Job =========*/}
                                         <Grid xs={6} md={6} 
@@ -77,7 +70,7 @@ const AllApplication = () => {
                                                     fontWeight: 600
                                                     }}
                                                 >
-                                                    Textify Al
+                                                    {createJob.companyName}
                                                 </Typography>
                                                 <Typography 
                                                     style={{
@@ -85,7 +78,7 @@ const AllApplication = () => {
                                                     fontWeight: 500
                                                     }}
                                                 >
-                                                    Frond-end developer
+                                                    {createJob.jobTitle}
                                                 </Typography>
                                                 <Typography 
                                                     style={{
@@ -93,7 +86,7 @@ const AllApplication = () => {
                                                     fontWeight: 600
                                                     }}
                                                 >
-                                                    Unites-state
+                                                    {createJob.location}
                                                 </Typography>
                                             </Grid>   
                                         </Grid>
