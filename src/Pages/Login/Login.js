@@ -176,7 +176,7 @@ const Login = () => {
                             }
                         }}
                     >
-                        New to Muzify? Crete Account Now.
+                        New to Travail? Crete Account Now.
                     </Typography>
                 </Box>
             </Box>
