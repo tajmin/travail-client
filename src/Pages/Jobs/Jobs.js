@@ -19,7 +19,7 @@ const Jobs = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:2222/availableJobs')
+        fetch('https://pacific-lowlands-19741.herokuapp.com/availableJobs')
             .then(res => res.json())
             .then(data => {
                 setJobs(data);
