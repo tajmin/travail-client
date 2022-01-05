@@ -16,6 +16,7 @@ import AllApplication from './Pages/Profail/AllApplications/AllApplicaions';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
+import Chart from './Pages/Chart/Chart';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
             <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
+            <Route path='/chart' element={<Chart></Chart>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

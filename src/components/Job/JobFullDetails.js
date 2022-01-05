@@ -100,7 +100,7 @@ const JobFullDetails = () => {
                                 <Typography variant="h5">
                                     {jobTitle}
                                 </Typography>
-                                <Typography variant="h6">
+                                <Typography>
                                     {companyName}
                                 </Typography>
                                 <Typography>
@@ -184,7 +184,7 @@ const JobFullDetails = () => {
 
                                     Pay: $95,000.00 - $106,000.00 per year
 
-                                    <Typography variant="h6">Skill Requires : </Typography>
+                                    <Typography>Skill Requires : </Typography>
                                     <ul>
                                         <li>React JS</li>
                                         <li>Node JS</li>
