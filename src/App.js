@@ -36,7 +36,7 @@ function App() {
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
             <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
-            <Route path='/chart' element={<Chart></Chart>} />
+            {/* <Route path='/chart' element={<Chart></Chart>} /> */}
             <Route path='/admin' element={<AdminDashboard></AdminDashboard>} />
           </Routes>
         </BrowserRouter>

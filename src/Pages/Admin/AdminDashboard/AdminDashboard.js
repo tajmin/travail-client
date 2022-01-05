@@ -11,8 +11,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 import { lightGreen } from "@mui/material/colors";
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
+import Chart from "../../Chart/Chart";
 
 const drawerWidth = 140;
 
@@ -110,7 +111,9 @@ function AdminDashboard(props) {
         }}
       >
         <Toolbar />
-        <Typography paragraph>Chart</Typography>
+        <Box>
+          <Chart></Chart>
+        </Box>
         <Typography paragraph>Somethings</Typography>
       </Box>
     </Box>
