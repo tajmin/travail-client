@@ -16,6 +16,9 @@ import AllApplication from './Pages/Profail/AllApplications/AllApplicaions';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
+import Chart from './Pages/Chart/Chart';
+
+import AdminDashboard from './Pages/Admin/AdminDashboard/AdminDashboard';
 
 function App() {
   return (
@@ -25,6 +28,7 @@ function App() {
           <Routes>
             <Route path='/login' element={<Login></Login>} />
             <Route path='/' element={<Home></Home>} />
+            <Route path='/home' element={<Home></Home>} />
             <Route path='/jobs' element={<Jobs></Jobs>} />
             <Route path='/postjob' element={<PrivateRoute><PostAJob></PostAJob></PrivateRoute>} />
             <Route path='/created-jobs' element={<PrivateRoute><AllApplication></AllApplication></PrivateRoute>} />
@@ -32,6 +36,8 @@ function App() {
             <Route path='/my-profile' element={<ProfailDrawer></ProfailDrawer>} />
             <Route path='/sign-up' element={<SignUp></SignUp>} />
             <Route path='/fullDetails/:id' element={<JobFullDetails></JobFullDetails>} />
+            <Route path='/chart' element={<Chart></Chart>} />
+            <Route path='/admin' element={<AdminDashboard></AdminDashboard>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

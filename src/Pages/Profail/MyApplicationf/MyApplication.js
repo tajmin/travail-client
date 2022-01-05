@@ -39,8 +39,8 @@ const MyApplication = () => {
                         
                         <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={{ xs: 2, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                            {Array.from(Array(6)).map((_, index) => (
-                            <Grid item xs={12} sm={12} md={12} key={index}>
+                            {applies?.map((apply) => (
+                            <Grid item xs={12} sm={12} md={12} key={apply._id}>
                                 <Grid>
                                     <Grid xs={12} md={12} 
                                         style={{
@@ -55,13 +55,7 @@ const MyApplication = () => {
                                             <Typography>
                                                 <HomeWorkIcon style={{color: "#13F7B5"}}/>
                                             </Typography>
-                                            <img 
-                                            style={{
-                                                width: "30px", 
-                                                borderRadius: "45px"
-                                                }} 
-                                                src="https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/photos/term-bg-1-c98135712157fb21286eafd480f610f9.jpg" 
-                                                alt="" />
+                                            
                                         </Grid>
                      {/* ========== All Applied jobs ==========*/}
                                         <Grid xs={6} md={6} 
@@ -75,21 +69,21 @@ const MyApplication = () => {
                                                     fontSize: 22, 
                                                     fontWeight: 600
                                                     }}>
-                                                    Textify Al
+                                                    {apply.job.jobTitle}
                                                 </Typography>
                                                 <Typography 
                                                     style={{
                                                     fontSize: 20, 
                                                     fontWeight: 500
                                                     }}>
-                                                    Frond-end developer
+                                                    {apply.job.companyName}
                                                 </Typography>
                                                 <Typography 
                                                     style={{
                                                     fontSize: 14, 
                                                     fontWeight: 600
                                                     }}>
-                                                    Unites-state
+                                                    {apply.job.location}
                                                 </Typography>
                                             </Grid>   
                                         </Grid>

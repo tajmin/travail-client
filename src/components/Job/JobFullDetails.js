@@ -40,7 +40,6 @@ const JobFullDetails = () => {
     const { id } = useParams();
     const job = useSelector((state) => state.jobs.jobDetails);
     const { user } = useAuth();
-    const email = user.email;
 
     const { companyName, description, jobTitle, location, salary, workingHour } = job;
 
@@ -59,6 +58,7 @@ const JobFullDetails = () => {
     const onSubmit = data => {
 
         data.job = { ...job };
+        data.email = user.email;
 
         fetch('https://pacific-lowlands-19741.herokuapp.com/apply-job', {
             method: "POST",
@@ -111,7 +111,7 @@ const JobFullDetails = () => {
                                 <Typography variant="h5">
                                     {jobTitle}
                                 </Typography>
-                                <Typography variant="h6">
+                                <Typography>
                                     {companyName}
                                 </Typography>
                                 <Typography>
@@ -130,7 +130,7 @@ const JobFullDetails = () => {
                                 <>
                                     <div>
                                         {
-                                            email &&
+                                            user?.email &&
                                             <Button variant="contained" sx={{ margin: "20px 0px" }} onClick={handleOpen}>Apply Now</Button>}
 
                                         <Modal
@@ -154,10 +154,7 @@ const JobFullDetails = () => {
 
                                                     <TextField sx={{ marginBottom: "20px" }} {...register("fullName")} fullWidth label="Full Name" id="fullWidth" />
 
-                                                    <TextField sx={{ marginBottom: "20px" }} {...register("email")}
-                                                        defaultValue={email}
-                                                        disabled
-                                                        fullWidth label="Email" id="fullWidth" />
+
 
                                                     <TextField sx={{ marginBottom: "20px" }} {...register("phone")} fullWidth label="Phone Number" id="fullWidth" />
 
@@ -195,7 +192,7 @@ const JobFullDetails = () => {
 
                                     Pay: $95,000.00 - $106,000.00 per year
 
-                                    <Typography variant="h6">Skill Requires : </Typography>
+                                    <Typography>Skill Requires : </Typography>
                                     <ul>
                                         <li>React JS</li>
                                         <li>Node JS</li>
