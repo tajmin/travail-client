@@ -39,14 +39,20 @@ function ProfailDrawer(props) {
         />
       </Typography>
       <Divider />
-      <Link to="/created-jobs" style={{ textDecoration: "none" }}>
-        <Button sx={{ color: "inherit" }}>Created Jobs</Button>
+      <Link style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }} to="/home">
+        Home
       </Link>
-      <Link to="/my-applications" style={{ textDecoration: "none" }}>
-        <Button sx={{ color: "inherit" }}>Applied Jobs</Button>
+      <br/>
+      <Link to="/created-jobs" style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }}>
+        Created Jobs
       </Link>
-      <Link to="/postjob" style={{ textDecoration: "none" }}>
-        <Button sx={{ color: "inherit" }}>Post Job</Button>
+      <br/>
+      <Link to="/my-applications" style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }}>
+        Applied Jobs
+      </Link>
+      <br/>
+      <Link to="/postjob" style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }}>
+        Post Job
       </Link>
     </div>
   );

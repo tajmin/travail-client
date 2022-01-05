@@ -1,7 +1,6 @@
 import { Box, Button, Container, Grid, Link, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ArrowRightAltSharpIcon from "@mui/icons-material/ArrowRightAltSharp";
-// import jobs from "../../../fakeData"
 
 const CurrentJob = () => {
   const [jobs, setJobs] = useState();
