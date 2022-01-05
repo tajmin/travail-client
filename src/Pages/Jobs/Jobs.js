@@ -1,40 +1,34 @@
-// import React,{useState} from 'react';
 import './Jobs.css';
 import Job from '../../components/Job/Job';
-// import jobs from '../../fakeData'
 import JobDetails from '../../components/Job/JobDetails';
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { Box } from '@mui/system';
-import { CircularProgress, TextField } from '@mui/material';
-
-
+import { TextField } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllJobs } from '../../redux/slices/jobSlice';
 
 
 const Jobs = () => {
-
-    const [jobs, setJobs] = useState([]);
-    const [jobId, setJobId] = useState('');
-    // products to be rendered on the UI
-    const [displayJobs, setDisplayJobs] = useState([]);
+    const [filter, setFilter] = useState("")
+    //redux and thunk
+    const dispatch = useDispatch();
+    const jobs = useSelector((state) => state.jobs.jobs);
+    let filteredJobs = useMemo(() => jobs.filter(job => job.jobTitle.toLowerCase().includes(filter), [filter]))
+    const [jobId, setJobId] = useState(null);
 
 
     useEffect(() => {
-        fetch('https://pacific-lowlands-19741.herokuapp.com/availableJobs')
-            .then(res => res.json())
-            .then(data => {
-                setJobs(data);
-                setDisplayJobs(data);
-                setJobId(data[0]._id);
-            })
-    }, []);
+        dispatch(fetchAllJobs())
+        setJobId(filteredJobs[0]?._id)
+    }, [dispatch, jobs, filteredJobs]);
 
     // handle search job 
     const handleSearch = event => {
-        const searchText = event.target.value;
-
-        const matchedJobs = jobs.filter(job => job.jobTitle.toLowerCase().includes(searchText.toLowerCase()));
-
-        setDisplayJobs(matchedJobs);
+        if (event.target.value) {
+            const searchText = event.target.value;
+            setFilter(searchText.toLowerCase());
+            return;
+        }
     }
 
     const handleSetJob = (id) => {
@@ -55,15 +49,10 @@ const Jobs = () => {
             <div className="jobsContainer">
                 <div className="jobs-container-left">
                     {
-
-                        !displayJobs ? <Box sx={{ display: 'flex' }}>
-                            <CircularProgress />
-                        </Box> :
-
-                            displayJobs.map(job => <Job key={job._id}
-                                handleSetJob={handleSetJob}
-                                job={job}>
-                            </Job>)
+                        filteredJobs.map(job => <Job key={job._id}
+                            handleSetJob={handleSetJob}
+                            job={job}>
+                        </Job>)
                     }
                 </div>
 

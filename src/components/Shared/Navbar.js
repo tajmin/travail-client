@@ -182,7 +182,7 @@ const ResponsiveAppBar = () => {
                   <MenuItem as={Link} to="/my-profile" onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">My Profile</Typography>
                   </MenuItem>
-                  <MenuItem as={Link} to="/" onClick={handleCloseNavMenu}>
+                  <MenuItem as={Link} to="/created-jobs" onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">My Jobs</Typography>
                   </MenuItem>
                   <MenuItem onClick={logout}>

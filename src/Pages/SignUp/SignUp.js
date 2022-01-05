@@ -1,5 +1,5 @@
 import { Alert, Box, Button, TextField, Typography } from '@mui/material';
-import { amber, lightBlue, lightGreen } from '@mui/material/colors';
+import { lightBlue, lightGreen } from '@mui/material/colors';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -7,7 +7,6 @@ import useAuth from '../../hooks/useAuth';
 import spinner from '../../images/spinner.gif'
 
 const SignUp = () => {
-    const partialBgColor = amber[300];
     const [registerData, setRegisterDataData] = useState({});
     const navigate = useNavigate();
     const { emailRegistration, isLoading, authError } = useAuth();
@@ -187,7 +186,7 @@ const SignUp = () => {
                             }
                         }}
                     >
-                        New to Muzify? Crete Account Now.
+                        Already have an account? Login now.
                     </Typography>
                 </Box>
             </Box>

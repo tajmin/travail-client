@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import { useForm } from "react-hook-form";
+import { Button, TextField } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -12,9 +13,8 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  height: 500,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: '1px solid #000',
   boxShadow: 24,
   p: 4,
 };
@@ -75,32 +75,43 @@ const UpdateProfail = ({open, handleUpdateClose, user}) => {
               {user.displayName}
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <input {...register("userName", { required: true })}
+              <TextField sx={{ marginBottom: "20px" }}
+              {...register("userName", { required: true })}
               placeholder='Name' 
               defaultValue= {user.displayName} 
               onBlur = {handleOnBlur}/>
 
-              <input {...register("email")} 
+              <TextField 
+              sx={{ marginBottom: "20px" }}
+              {...register("email")} 
               placeholder='Email'
               onBlur = {handleOnBlur}/>
 
-              <input type="number" {...register("phone")} 
+              <TextField 
+              sx={{ marginBottom: "20px" }}
+              type="number" {...register("phone")} 
               placeholder='Phone'
               onBlur = {handleOnBlur}/>
 
-              <input {...register("education")} 
+              <TextField 
+              sx={{ marginBottom: "20px" }}
+              {...register("education")} 
               placeholder='Education'
               onBlur = {handleOnBlur}/>
 
-              <input {...register("experience")} 
+              <TextField 
+              sx={{ marginBottom: "20px" }}
+              {...register("experience")} 
               placeholder='Experience'
               onBlur = {handleOnBlur}/>
 
-              <input {...register("skills")}
+              <TextField 
+              sx={{ marginBottom: "20px" }}
+              {...register("skills")}
               placeholder='Skills'
               onBlur = {handleOnBlur}/>
               <br/>
-              <input type="submit" />
+              <Button variant="contained" color="success" type="submit">Submit</Button>
 
             </form>
           </Box>
