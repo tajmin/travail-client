@@ -111,8 +111,17 @@ function AdminDashboard(props) {
         }}
       >
         <Toolbar />
+
         <Box>
-          <Chart></Chart>
+          <Typography
+            sx={{ fontWeight: 'bold', color: 'black', py: 10 }}
+            variant="h1" component="div"
+            fontSize={{ lg: 70, xs: 50 }}>
+            Job Insights on Travail
+          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Chart></Chart>
+          </Box>
         </Box>
         <Typography paragraph>Somethings</Typography>
       </Box>

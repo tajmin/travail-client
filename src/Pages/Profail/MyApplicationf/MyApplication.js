@@ -2,20 +2,38 @@ import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import spinner from '../../../images/spinner.gif'
 
 import useAuth from "../../../hooks/useAuth";
 
 const MyApplication = () => {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   let { email } = user;
   console.log(email);
   const [applies, setApplies] = useState();
+
   useEffect(() => {
     fetch(`https://pacific-lowlands-19741.herokuapp.com/applied-jobs/${email}`)
       .then((res) => res.json())
       .then((data) => setApplies(data));
   }, []);
-  console.log(applies);
+
+
+  if (isLoading) {
+    return (
+      <Box
+        sx={{
+          backgroundColor: '#fff',
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+        <img style={{ margin: '0 auto' }} src={spinner} alt="" />
+      </Box>
+    )
+  }
+
   return (
     <Container style={{ margin: "56px" }}>
       <Box sx={{ flexGrow: 1 }}>

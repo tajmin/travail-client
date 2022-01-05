@@ -19,7 +19,7 @@ import avatar from '../../images/avatar.jpg'
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const { user, logout } = useAuth();
+  const { user, logout, isAdmin } = useAuth();
   let navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
@@ -185,6 +185,11 @@ const ResponsiveAppBar = () => {
                   <MenuItem as={Link} to="/created-jobs" onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">My Jobs</Typography>
                   </MenuItem>
+                  {
+                    isAdmin && <MenuItem as={Link} to="/dashboard" >
+                      <Typography textAlign="center">Dashboard</Typography>
+                    </MenuItem>
+                  }
                   <MenuItem onClick={logout}>
                     <Typography textAlign="center">Log Out</Typography>
                   </MenuItem>

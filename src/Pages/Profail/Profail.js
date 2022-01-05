@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import UpdateProfail from "./UpdateProfail/UpdateProfail";
 import { lightGreen } from "@mui/material/colors";
+import avatar from '../../images/avatar.jpg'
 
 const verticalCenter = {
   display: "flex",
@@ -49,8 +50,7 @@ const Profail = () => {
                             height: "150px",
                             borderRadius: "80px",
                           }}
-                          src={user.photoURL}
-                          alt=""
+                          src={user?.photoURL ? user?.photoURL : avatar} alt="avatar"
                         />
                       </Grid>
                       <Link style={{ textDecoration: "none" }}>

@@ -6,7 +6,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -14,13 +13,15 @@ import { Button, Grid } from "@mui/material";
 import Profail from "../Profail";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import avatar from '../../../images/avatar.jpg'
+import spinner from '../../../images/spinner.gif'
 
 import { lightGreen } from "@mui/material/colors";
 
 const drawerWidth = 150;
 
 function ProfailDrawer(props) {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -31,26 +32,22 @@ function ProfailDrawer(props) {
   const drawer = (
     <div>
       <Toolbar />
-      <Typography>
-        <img
-          style={{ width: "50px", height: "50px", borderRadius: "80px" }}
-          src={user.photoURL}
-          alt=""
-        />
-      </Typography>
+      <Box>
+        <img style={{ width: "50px", height: "50px", borderRadius: "80px" }} src={user?.photoURL ? user?.photoURL : avatar} alt="avatar" />
+      </Box>
       <Divider />
       <Link style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }} to="/home">
         Home
       </Link>
-      <br/>
+      <br />
       <Link to="/created-jobs" style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }}>
         Created Jobs
       </Link>
-      <br/>
+      <br />
       <Link to="/my-applications" style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }}>
         Applied Jobs
       </Link>
-      <br/>
+      <br />
       <Link to="/postjob" style={{ textDecoration: "none", fontWeight: 700, color: lightGreen[900] }}>
         Post Job
       </Link>
@@ -59,6 +56,21 @@ function ProfailDrawer(props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+
+  if (isLoading) {
+    return (
+      <Box
+        sx={{
+          backgroundColor: '#fff',
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+        <img style={{ margin: '0 auto' }} src={spinner} alt="" />
+      </Box>
+    )
+  }
 
   return (
     <Box sx={{ display: "flex" }}>
