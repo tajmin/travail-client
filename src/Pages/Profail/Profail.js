@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import UpdateProfail from './UpdateProfail/UpdateProfail';
+import { lightGreen } from '@mui/material/colors';
 
 const verticalCenter={
     display: "flex",
@@ -29,7 +30,7 @@ const Profail = () => {
 
     return (
         <>
-        <Box sx={{ flexGrow: 1 }}>
+        <Container sx={{ flexGrow: 1 , mx: 6}}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {Array.from(Array(1)).map((_, index) => (
                 <Grid item xs={2} sm={4} md={4} key={index}>
@@ -38,10 +39,19 @@ const Profail = () => {
                             <Grid>
                                 <Box>
                                     <Grid>
-                                    <img style={{width: "150px", height: "150px", borderRadius: "80px"}} src={user.photoURL} alt="" />
+                                    <img style={{
+                                        width: "150px", 
+                                        height: "150px", 
+                                        borderRadius: "80px"
+                                        }}
+                                         src={user.photoURL} alt="" />
                                     </Grid>
                                     <Link style={{textDecoration: "none"}}>
-                                    <Button onClick={handleUpdateOpen}>Edit Profile</Button>
+                                    <Button 
+                                    sx={{backgroundColor: lightGreen[800]}} variant='contained' 
+                                    onClick={handleUpdateOpen}
+                                    >
+                                        Edit Profile</Button>
                                     </Link>
                                 </Box>
                             </Grid>
@@ -76,7 +86,7 @@ const Profail = () => {
                 </Grid>
                 ))}
             </Grid>
-        </Box>
+        </Container>
         <UpdateProfail
             user={user}
             open={open}
