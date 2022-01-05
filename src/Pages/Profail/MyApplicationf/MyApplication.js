@@ -55,13 +55,7 @@ const MyApplication = () => {
                                             <Typography>
                                                 <HomeWorkIcon style={{color: "#13F7B5"}}/>
                                             </Typography>
-                                            <img 
-                                            style={{
-                                                width: "30px", 
-                                                borderRadius: "45px"
-                                                }} 
-                                                src="https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/photos/term-bg-1-c98135712157fb21286eafd480f610f9.jpg" 
-                                                alt="" />
+                                            
                                         </Grid>
                      {/* ========== All Applied jobs ==========*/}
                                         <Grid xs={6} md={6} 

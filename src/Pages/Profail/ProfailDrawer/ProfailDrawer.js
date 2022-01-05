@@ -34,8 +34,6 @@ function ProfailDrawer(props) {
         <Typography>
         <img style={{width: "50px", height: "50px", borderRadius: "80px"}} src={user.photoURL} alt="" />
         </Typography>
-
-
       <Divider />
       <Link to="/created-jobs" style={{textDecoration: "none"}}>
         <Button sx={{color: "inherit"}}>Created Jobs</Button>
@@ -113,8 +111,6 @@ function ProfailDrawer(props) {
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
-
-
         <Toolbar />
         <Typography paragraph>
           <Grid>
